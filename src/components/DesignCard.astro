@@ -1,0 +1,30 @@
+---
+const { name, description, repo, topics = [], preview } = Astro.props;
+---
+
+<article class="card">
+  <img
+    src={preview}
+    alt={`Preview del diseño ${name}`}
+    loading="lazy"
+    class="preview"
+    onerror="this.src='/placeholder.png'"
+  />
+
+  <h3>{name}</h3>
+  <p>{description}</p>
+
+  {topics.length > 0 ? (
+    <ul class="tags">
+      {topics.map(topic => (
+        <li class="tag">{topic}</li>
+      ))}
+    </ul>
+  ) : null}
+
+  <div class="actions">
+    <a href={repo} target="_blank" rel="noopener">
+      Repositorio
+    </a>
+  </div>
+</article>
