@@ -1,0 +1,8 @@
+- name: we_universal
+  description: Estilo moderno y limpio para phpBB 3.x
+  preview: https://raw.githubusercontent.com/nextgen-solutions-gt/we_universal/main/preview.png
+  repo: https://github.com/nextgen-solutions-gt/we_universal
+  tags:
+    - dark
+    - responsive
+    - phpbb-3-3
