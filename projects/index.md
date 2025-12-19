@@ -1,16 +1,10 @@
 ---
 layout: default
-title: Projects
+title: Diseños
 ---
 
-<h1>Diseños profesionales para phpBB</h1>
+# Diseños profesionales para phpBB
 
-<div class="grid">
 {% for p in site.data.projects %}
-  <a class="card" href="/projects/{{ p.slug }}">
-    <img src="{{ p.preview }}" alt="{{ p.name }}">
-    <h3>{{ p.name }}</h3>
-    <p>{{ p.description }}</p>
-  </a>
+- [{{ p.name }}](/projects/{{ p.slug }}/)
 {% endfor %}
-</div>
