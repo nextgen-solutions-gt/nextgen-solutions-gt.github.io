@@ -1,28 +1,36 @@
 :root {
   --bg: #ffffff;
-  --fg: #121212;
+  --fg: #111;
+  --card: #f3f3f3;
   --muted: #555;
-  --card: #f4f4f4;
   --border: #ddd;
 }
 
 [data-theme="dark"] {
   --bg: #0e0f12;
   --fg: #eaeaea;
-  --muted: #a0a0a0;
   --card: #17191f;
+  --muted: #aaa;
   --border: #2a2d35;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: system-ui, sans-serif;
   background: var(--bg);
   color: var(--fg);
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  padding: .6rem;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .container {

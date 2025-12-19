@@ -1,34 +1,22 @@
 <!doctype html>
-<html lang="es" data-theme="light">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <title>{{ page.title }}</title>
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
 </head>
 <body>
-  <header class="container">
-    <button id="theme-toggle" aria-label="Cambiar modo de color">
-      🌙
-    </button>
-  </header>
+<button id="theme-toggle" aria-label="Cambiar modo">
+  <i class="bi bi-moon-fill"></i>
+</button>
 
-  <main class="container">
-    {{ content }}
-  </main>
+<main class="container">
+  {{ content }}
+</main>
 
-  <script>
-    const html = document.documentElement;
-    const btn = document.getElementById('theme-toggle');
+<script src="/assets/js/theme.js"></script>
 
-    const saved = localStorage.getItem('theme');
-    if (saved) html.dataset.theme = saved;
-
-    btn.onclick = () => {
-      const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
-      html.dataset.theme = next;
-      localStorage.setItem('theme', next);
-      btn.textContent = next === 'dark' ? '☀️' : '🌙';
-    };
-  </script>
 </body>
 </html>
