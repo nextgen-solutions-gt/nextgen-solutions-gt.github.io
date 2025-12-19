@@ -2,20 +2,22 @@
 layout: default
 ---
 
-<article>
+<article class="project">
   <h1>{{ page.title }}</h1>
 
-  <img src="{{ page.preview }}" alt="{{ page.title }}">
+  <img src="{{ page.preview }}" alt="Preview del diseño {{ page.title }}">
 
   <p>{{ page.description }}</p>
 
-  <ul>
+  <ul class="tags">
     {% for tag in page.tags %}
       <li>{{ tag }}</li>
     {% endfor %}
   </ul>
 
-  <a href="{{ page.repo }}" target="_blank">
-    Ver repositorio
-  </a>
+  <p>
+    <a href="{{ page.repo }}" target="_blank" rel="noopener">
+      Ver repositorio en GitHub →
+    </a>
+  </p>
 </article>
