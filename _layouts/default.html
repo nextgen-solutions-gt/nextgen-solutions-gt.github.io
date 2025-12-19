@@ -1,13 +1,34 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="utf-8">
   <title>{{ page.title }}</title>
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+  <header class="container">
+    <button id="theme-toggle" aria-label="Cambiar modo de color">
+      🌙
+    </button>
+  </header>
+
   <main class="container">
     {{ content }}
   </main>
+
+  <script>
+    const html = document.documentElement;
+    const btn = document.getElementById('theme-toggle');
+
+    const saved = localStorage.getItem('theme');
+    if (saved) html.dataset.theme = saved;
+
+    btn.onclick = () => {
+      const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
+      html.dataset.theme = next;
+      localStorage.setItem('theme', next);
+      btn.textContent = next === 'dark' ? '☀️' : '🌙';
+    };
+  </script>
 </body>
 </html>

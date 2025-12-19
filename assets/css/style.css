@@ -6,14 +6,12 @@
   --border: #ddd;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0e0f12;
-    --fg: #eaeaea;
-    --muted: #a0a0a0;
-    --card: #17191f;
-    --border: #2a2d35;
-  }
+[data-theme="dark"] {
+  --bg: #0e0f12;
+  --fg: #eaeaea;
+  --muted: #a0a0a0;
+  --card: #17191f;
+  --border: #2a2d35;
 }
 
 * {
