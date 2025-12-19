@@ -1,0 +1,15 @@
+<h1>{{ project.name }}</h1>
+
+<img src="{{ project.preview }}" alt="{{ project.name }}">
+
+<p>{{ project.description }}</p>
+
+<ul>
+{% for tag in project.tags %}
+  <li>{{ tag }}</li>
+{% endfor %}
+</ul>
+
+<a href="{{ project.repo }}" target="_blank">
+  Ver repositorio
+</a>
