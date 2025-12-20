@@ -25,3 +25,33 @@ toggle.addEventListener("click", () => {
 // Idioma (base)
 const lang = navigator.language.startsWith("es") ? "es" : "en";
 document.documentElement.lang = lang;
+
+const translations = {{ site.data.i18n | jsonify }};
+
+function setLanguage(lang) {
+  const dict = translations[lang] || translations.es;
+  document.documentElement.lang = lang;
+  document.documentElement.dataset.lang = lang;
+  localStorage.setItem("lang", lang);
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const keys = el.dataset.i18n.split(".");
+    let value = dict;
+
+    keys.forEach(k => value = value?.[k]);
+
+    if (value) el.textContent = value;
+  });
+}
+
+// idioma inicial
+const savedLang = localStorage.getItem("lang");
+const browserLang = navigator.language.startsWith("es") ? "es" : "en";
+setLanguage(savedLang || browserLang);
+
+// botones
+document.querySelectorAll("[data-lang-btn]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    setLanguage(btn.dataset.langBtn);
+  });
+});

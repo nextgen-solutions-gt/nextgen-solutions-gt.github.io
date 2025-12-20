@@ -1,0 +1,45 @@
+es:
+  site:
+    title: "Servicios profesionales para phpBB"
+    tagline: "Instalación, actualización, mantenimiento y diseños phpBB"
+
+  services:
+    title: "Servicios"
+    install:
+      title: "Instalación phpBB"
+      desc: "Instalación limpia y optimizada de phpBB."
+    update:
+      title: "Actualización phpBB"
+      desc: "Actualizaciones seguras sin pérdida de datos."
+    maintenance:
+      title: "Mantenimiento"
+      desc: "Soporte continuo, seguridad y rendimiento."
+    design:
+      title: "Diseños phpBB"
+      desc: "Estilos profesionales y personalizados."
+
+  designs:
+    title: "Diseños phpBB"
+
+en:
+  site:
+    title: "Professional phpBB Services"
+    tagline: "Installation, updates, maintenance and phpBB designs"
+
+  services:
+    title: "Services"
+    install:
+      title: "phpBB Installation"
+      desc: "Clean and optimized phpBB installation."
+    update:
+      title: "phpBB Updates"
+      desc: "Safe updates without data loss."
+    maintenance:
+      title: "Maintenance"
+      desc: "Ongoing support, security and performance."
+    design:
+      title: "phpBB Designs"
+      desc: "Professional and custom styles."
+  
+  designs:
+    title: "phpBB Designs"

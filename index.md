@@ -1,35 +1,40 @@
 ---
 layout: default
-title: Servicios profesionales para phpBB
 ---
 
 <section class="hero reveal">
-## Especialistas en phpBB
-
-Instalación, actualización, mantenimiento y diseño profesional para comunidades phpBB.
+<h1 data-i18n="site.title"></h1>
+<p data-i18n="site.tagline"></p>
 </section>
 
 <section id="services">
-## Servicios
+<h2 data-i18n="services.title"></h2>
 
-{% for service in site.data.services %}
 <div class="card reveal">
-<i class="fa-solid {{ service.icon }}"></i>
-<h3>{{ service.title }}</h3>
-<p>{{ service.description }}</p>
+<i class="fa-solid fa-download"></i>
+<h3 data-i18n="services.install.title"></h3>
+<p data-i18n="services.install.desc"></p>
 </div>
-{% endfor %}
+
+<div class="card reveal">
+<i class="fa-solid fa-rotate"></i>
+<h3 data-i18n="services.update.title"></h3>
+<p data-i18n="services.update.desc"></p>
+</div>
+
+<div class="card reveal">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+<h3 data-i18n="services.maintenance.title"></h3>
+<p data-i18n="services.maintenance.desc"></p>
+</div>
+
+<div class="card reveal">
+<i class="fa-solid fa-palette"></i>
+<h3 data-i18n="services.design.title"></h3>
+<p data-i18n="services.design.desc"></p>
+</div>
 </section>
 
 <section id="designs">
-## Diseños phpBB
-
-{% for design in site.data.designs %}
-<div class="card reveal">
-<img src="{{ design.preview }}" alt="Preview {{ design.name }}">
-<h3>{{ design.name }}</h3>
-<p>{{ design.description }}</p>
-<a href="{{ design.repo }}" target="_blank">Repositorio</a>
-</div>
-{% endfor %}
+<h2 data-i18n="designs.title"></h2>
 </section>
