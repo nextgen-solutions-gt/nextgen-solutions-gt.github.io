@@ -1,0 +1,15 @@
+- title: Instalación phpBB
+  description: Instalación limpia y optimizada de phpBB.
+  icon: fa-download
+
+- title: Actualización phpBB
+  description: Actualizaciones seguras sin pérdida de datos.
+  icon: fa-rotate
+
+- title: Mantenimiento
+  description: Soporte continuo, seguridad y rendimiento.
+  icon: fa-screwdriver-wrench
+
+- title: Diseños phpBB
+  description: Estilos profesionales personalizados.
+  icon: fa-palette
