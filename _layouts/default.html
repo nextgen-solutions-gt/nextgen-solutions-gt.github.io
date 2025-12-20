@@ -12,22 +12,31 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  <header class="header">
+<header class="container header">
+  <div class="brand">
     <h1>nextgen solutions</h1>
-    <button id="theme-toggle" aria-label="Cambiar tema">
+  </div>
+
+  <div class="header-actions">
+    <div class="lang-switch">
+      <button data-lang="es">ES</button>
+      <button data-lang="en">EN</button>
+    </div>
+
+    <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
       <i class="fa-solid fa-moon"></i>
     </button>
-<div class="lang-switch">
-  <button data-lang-btn="es">ES</button>
-  <button data-lang-btn="en">EN</button>
-</div>
-	
-  </header>
+  </div>
+</header>
+
 
   <main>
     {{ content }}
   </main>
-
-  <script src="/assets/js/main.js"></script>
+<script>
+  window.TRANSLATIONS = {{ site.data.i18n | jsonify }};
+</script>
+	<script src="/assets/js/i18n.js"></script>
+	<script src="/assets/js/main.js"></script>
 </body>
 </html>

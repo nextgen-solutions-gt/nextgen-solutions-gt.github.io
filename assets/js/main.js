@@ -1,57 +1,22 @@
-// Scroll reveal
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-});
+const toggle = document.getElementById("themeToggle");
+const icon = toggle.querySelector("i");
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-
-// Dark mode
-const toggle = document.getElementById("theme-toggle");
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-document.documentElement.dataset.theme =
-  localStorage.theme || (prefersDark ? "dark" : "light");
-
-toggle.addEventListener("click", () => {
-  const theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-  document.documentElement.dataset.theme = theme;
-  localStorage.theme = theme;
-});
-
-// Idioma (base)
-const lang = navigator.language.startsWith("es") ? "es" : "en";
-document.documentElement.lang = lang;
-
-const translations = {{ site.data.i18n | jsonify }};
-
-function setLanguage(lang) {
-  const dict = translations[lang] || translations.es;
-  document.documentElement.lang = lang;
-  document.documentElement.dataset.lang = lang;
-  localStorage.setItem("lang", lang);
-
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const keys = el.dataset.i18n.split(".");
-    let value = dict;
-
-    keys.forEach(k => value = value?.[k]);
-
-    if (value) el.textContent = value;
-  });
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  icon.className =
+    theme === "dark"
+      ? "fa-solid fa-sun"
+      : "fa-solid fa-moon";
 }
 
-// idioma inicial
-const savedLang = localStorage.getItem("lang");
-const browserLang = navigator.language.startsWith("es") ? "es" : "en";
-setLanguage(savedLang || browserLang);
+const savedTheme = localStorage.getItem("theme");
+const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-// botones
-document.querySelectorAll("[data-lang-btn]").forEach(btn => {
-  btn.addEventListener("click", () => {
-    setLanguage(btn.dataset.langBtn);
-  });
+applyTheme(savedTheme || (systemDark ? "dark" : "light"));
+
+toggle.addEventListener("click", () => {
+  const current =
+    document.documentElement.getAttribute("data-theme");
+  applyTheme(current === "dark" ? "light" : "dark");
 });
