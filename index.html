@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NextGen Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script>
+    const lang = navigator.language || navigator.userLanguage;
+    if (lang.startsWith('es')) {
+      location.replace('/es/');
+    } else {
+      location.replace('/en/');
+    }
+  </script>
+</head>
+<body>
+  <noscript>
+    <p>
+      <a href="/en/">English</a> |
+      <a href="/es/">Español</a>
+    </p>
+  </noscript>
+</body>
+</html>
