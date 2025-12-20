@@ -116,3 +116,25 @@ h1 {
   color: var(--muted);
   font-size: 0.95rem;
 }
+
+/* Reveal base */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Cuando entra en pantalla */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accesibilidad: usuarios que prefieren menos animación */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
