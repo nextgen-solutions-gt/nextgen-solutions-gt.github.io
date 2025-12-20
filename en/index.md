@@ -11,10 +11,10 @@ for real-world communities.
 
 ## Services
 
-- Custom phpBB styles
-- Style modernization
-- Dark / light mode
-- Accessibility improvements
-- Long-term maintenance
+- <i class="fa-solid fa-paintbrush"></i> Custom phpBB styles  
+- <i class="fa-solid fa-wand-magic-sparkles"></i> Style modernization  
+- <i class="fa-solid fa-circle-half-stroke"></i> Dark / light mode  
+- <i class="fa-solid fa-universal-access"></i> Accessibility improvements  
+- <i class="fa-solid fa-screwdriver-wrench"></i> Long-term maintenance  
 
-👉 [View projects →](/projects/)
+[View projects →](/projects/)

@@ -110,3 +110,8 @@ h1 {
 .project a {
   color: #3b82f6;
 }
+
+i.fa-solid,
+i.fa-brands {
+  margin-right: .4rem;
+}

@@ -11,10 +11,11 @@ para comunidades reales.
 
 ## Servicios
 
-- Diseños personalizados para phpBB
-- Modernización de estilos
-- Modo oscuro / claro
-- Mejoras de accesibilidad
-- Mantenimiento continuo
+- <i class="fa-solid fa-paintbrush"></i> Diseños personalizados para phpBB  
+- <i class="fa-solid fa-wand-magic-sparkles"></i> Modernización de estilos  
+- <i class="fa-solid fa-circle-half-stroke"></i> Modo oscuro / claro  
+- <i class="fa-solid fa-universal-access"></i> Mejoras de accesibilidad  
+- <i class="fa-solid fa-screwdriver-wrench"></i> Mantenimiento continuo  
 
-👉 [Ver diseños →](/projects/)
+
+[Ver diseños →](/projects/)
