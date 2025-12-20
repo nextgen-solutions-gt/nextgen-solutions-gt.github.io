@@ -1,40 +1,32 @@
 ---
 layout: default
+title: nextgen solutions
 ---
 
-<section class="hero reveal">
-<h1 data-i18n="site.title"></h1>
-<p data-i18n="site.tagline"></p>
-</section>
+<section class="services container">
 
-<section id="services">
-<h2 data-i18n="services.title"></h2>
-
-<div class="card reveal">
-<i class="fa-solid fa-download"></i>
-<h3 data-i18n="services.install.title"></h3>
-<p data-i18n="services.install.desc"></p>
+<div class="card">
+  <i class="fa-solid fa-download"></i>
+  <h3>Instalación de phpBB</h3>
+  <p>Instalación profesional y configuración inicial.</p>
 </div>
 
-<div class="card reveal">
-<i class="fa-solid fa-rotate"></i>
-<h3 data-i18n="services.update.title"></h3>
-<p data-i18n="services.update.desc"></p>
+<div class="card">
+  <i class="fa-solid fa-arrows-rotate"></i>
+  <h3>Actualización de phpBB</h3>
+  <p>Actualizamos tu foro sin pérdida de datos.</p>
 </div>
 
-<div class="card reveal">
-<i class="fa-solid fa-screwdriver-wrench"></i>
-<h3 data-i18n="services.maintenance.title"></h3>
-<p data-i18n="services.maintenance.desc"></p>
+<div class="card">
+  <i class="fa-solid fa-screwdriver-wrench"></i>
+  <h3>Mantenimiento</h3>
+  <p>Soporte, seguridad y optimización continua.</p>
 </div>
 
-<div class="card reveal">
-<i class="fa-solid fa-palette"></i>
-<h3 data-i18n="services.design.title"></h3>
-<p data-i18n="services.design.desc"></p>
+<div class="card">
+  <i class="fa-solid fa-palette"></i>
+  <h3>Diseños phpBB</h3>
+  <p>Estilos modernos, responsive y personalizados.</p>
 </div>
-</section>
 
-<section id="designs">
-<h2 data-i18n="designs.title"></h2>
 </section>
