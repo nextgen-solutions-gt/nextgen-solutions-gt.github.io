@@ -1,15 +1,39 @@
-- title: Instalación phpBB
-  description: Instalación limpia y optimizada de phpBB.
-  icon: fa-download
+<section class="services container">
 
-- title: Actualización phpBB
-  description: Actualizaciones seguras sin pérdida de datos.
-  icon: fa-rotate
+  <div class="card">
+    <i class="fa-solid fa-download"></i>
+    <h3>Instalación de phpBB</h3>
+    <p>
+      Instalación limpia y segura de phpBB en tu servidor,
+      configurado y listo para usar.
+    </p>
+  </div>
 
-- title: Mantenimiento
-  description: Soporte continuo, seguridad y rendimiento.
-  icon: fa-screwdriver-wrench
+  <div class="card">
+    <i class="fa-solid fa-arrows-rotate"></i>
+    <h3>Actualización de phpBB</h3>
+    <p>
+      Actualizamos tu foro a la última versión sin perder
+      datos ni estilos personalizados.
+    </p>
+  </div>
 
-- title: Diseños phpBB
-  description: Estilos profesionales personalizados.
-  icon: fa-palette
+  <div class="card">
+    <i class="fa-solid fa-screwdriver-wrench"></i>
+    <h3>Mantenimiento</h3>
+    <p>
+      Soporte técnico, optimización y solución de errores
+      para foros en producción.
+    </p>
+  </div>
+
+  <div class="card">
+    <i class="fa-solid fa-palette"></i>
+    <h3>Diseños phpBB</h3>
+    <p>
+      Creación y adaptación de estilos profesionales,
+      modernos y responsive para phpBB.
+    </p>
+  </div>
+
+</section>
