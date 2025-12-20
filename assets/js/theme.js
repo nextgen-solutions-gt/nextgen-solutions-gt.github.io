@@ -1,12 +1,18 @@
 const btn = document.getElementById('theme-toggle');
 const icon = btn.querySelector('i');
 
-btn.onclick = () => {
-  const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
-  html.dataset.theme = next;
-  localStorage.setItem('theme', next);
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  icon.className = theme === 'dark'
+    ? 'bi bi-sun-fill'
+    : 'bi bi-moon-fill';
+}
 
-  icon.className = next === 'dark'
-    ? 'fa-solid fa-sun'
-    : 'fa-solid fa-moon';
-};
+const saved = localStorage.getItem('theme') || 'dark';
+setTheme(saved);
+
+btn.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  setTheme(current === 'dark' ? 'light' : 'dark');
+});
