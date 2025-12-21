@@ -459,11 +459,10 @@ h1 {
 }
 
 .site-footer {
-  background: var(--card);
   color: var(--muted);
   font-size: 0.85rem;
   text-align: center;
-  padding: 1rem 1rem;
+  padding: 3rem 1rem;
   border-top: 1px solid var(--border);
 }
 
