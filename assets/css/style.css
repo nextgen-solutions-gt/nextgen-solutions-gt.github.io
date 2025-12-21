@@ -460,26 +460,26 @@ h1 {
 
 .site-footer {
   background: var(--card);
-  color: var(--text);
-  padding: 2.5rem 1.5rem 1.5rem;
-  border-top: 1px solid var(--border);
-  text-align: center;
-}
-
-.footer-left h3 {
-  margin: 0 0 0.5rem;
-}
-
-.footer-left p {
   color: var(--muted);
-  font-size: 0.95rem;
-  margin: 0;
-}
-
-.footer-bottom {
-  margin-top: 1.5rem;
   font-size: 0.85rem;
-  color: var(--muted);
+  text-align: center;
+  padding: 1rem 1rem;
   border-top: 1px solid var(--border);
-  padding-top: 1rem;
+}
+
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.site-footer a:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .site-footer p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
 }
