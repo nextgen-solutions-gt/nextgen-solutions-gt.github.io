@@ -20,7 +20,7 @@
 
 - name: saphic
   description: "A familiar style of soft and silver colors combined with bright green. Made according to phpBB 3.2.x. Note: Due to the use of file inheritance, the prosilver style is required for the style to work correctly."
-  image: /assets/images/saphic.jpg
+  image: /assets/images/Saphic.jpg
   repo: https://github.com/nextgen-solutions-gt/saphic
  
 - name: proglass

@@ -48,3 +48,23 @@ title: nextgen solutions
     {% endfor %}
   </div>
 </section>
+
+<section id="home" class="hero container">
+  <!-- hero -->
+</section>
+
+<section id="services" class="services container">
+  <!-- servicios -->
+</section>
+
+<section id="designs" class="designs container">
+  <!-- diseños -->
+</section>
+
+<section id="portfolio" class="portfolio container">
+  <!-- portafolio -->
+</section>
+
+<section id="contact" class="contact container">
+  <!-- contacto -->
+</section>
