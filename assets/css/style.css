@@ -219,7 +219,7 @@ h1 {
   top: 0;
   width: 100%;
   background: var(--bg);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(0,0,0,.05);
   z-index: 1000;
 }
 
@@ -227,47 +227,75 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 72px;
 }
 
-.brand a {
+.nav-logo {
+  font-size: 1.25rem;
   font-weight: 700;
   text-decoration: none;
   color: var(--text);
 }
 
-.nav-links {
+.nav-menu {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem; /* 🔑 evita amontonamiento */
   list-style: none;
 }
 
-.nav-links a {
+.nav-menu a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--muted);
   font-weight: 500;
-  position: relative;
+  transition: color .2s ease;
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
+.nav-menu a:hover {
+  color: var(--primary);
 }
 
 .nav-actions {
   display: flex;
-  gap: 0.6rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-btn {
+  background: var(--card);
+  border: none;
+  padding: .5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    transform: translateY(-120%);
+    transition: transform .3s ease;
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+  }
+
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+  }
 }
 
 .hero {
