@@ -12,29 +12,36 @@
 </head>
 <body>
 <header class="site-header">
-  <nav class="nav container">
-    <div class="brand">
-      <h1><a href="#home">nextgen solutions</a></h1>
+  <nav class="navbar container">
+    <!-- Brand -->
+    <div class="nav-brand">
+      <span class="logo">nextgen</span>
+      <span class="logo-muted">solutions</span>
     </div>
 
-    <ul class="nav-links">
+    <!-- Menu -->
+    <ul class="nav-menu" id="navMenu">
       <li><a href="#services">Services</a></li>
       <li><a href="#designs">phpBB Designs</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#portfolio">Portafolio</a></li>
+      <li><a href="#contact">Contacto</a></li>
     </ul>
 
+    <!-- Actions -->
     <div class="nav-actions">
-      <!-- Tema -->
-	  <button class="nav-toggle" aria-label="Abrir menú">
-		<i class="fa-solid fa-bars"></i>
-	  </button>	  
+
       <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
-        <i class="fa-solid fa-desktop"></i>
+        <i class="fa-solid fa-moon"></i>
       </button>
-	</div>
+
+      <!-- Mobile toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
   </nav>
-</header
+</header>
+
 
   <main>
     {{ content }}
