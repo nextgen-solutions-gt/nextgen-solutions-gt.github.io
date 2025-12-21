@@ -1,49 +1,49 @@
 - name: we_universal
-  description: Modern, clean and universal style for phpBB 3.0, phpBB 3.1, phpBB 3.2 and phpBB 3.3.
+  description: "Modern, clean and universal style for phpBB 3.0, phpBB 3.1, phpBB 3.2 and phpBB 3.3.x"
   image: /assets/images/we_universal.jpg
   repo: https://github.com/nextgen-solutions-gt/we_universal
 
 - name: we_clearblue
-  description: Modern and universal style for phpBB 3.3.x (based on prosilver). Kept in light, pastels colours and built with fluid layout width. 
+  description: "Modern and universal style for phpBB 3.3.x (based on prosilver). Kept in light, pastels colours and built with fluid layout width."
   image: /assets/images/we_clearblue.jpg
   repo: https://github.com/nextgen-solutions-gt/we_clearblue
 
 - name: FI-Subice
-  description: This style is a update from the 2.0.x version of FI subice , its a style based on prosilver.
+  description: "This style is a update from the 2.0.x version of FI subice, its a style based on prosilver."
   image: /assets/images/FI-Subice.jpg
   repo: https://github.com/nextgen-solutions-gt/FI-Subice
   
 - name: revolution
-  description:  Revolution style for phpBB 
+  description: "Revolution style for phpBB"
   image: /assets/images/revolution.jpg
   repo: https://github.com/nextgen-solutions-gt/revolution
 
 - name: saphic
-  description:  A familiar style of soft and silver colors combined with bright green. Made according to phpBB 3.2.x. Note: Due to the use of file inheritance, the prosilver style is required for the style to work correctly.
+  description: "A familiar style of soft and silver colors combined with bright green. Made according to phpBB 3.2.x. Note: Due to the use of file inheritance, the prosilver style is required for the style to work correctly."
   image: /assets/images/saphic.jpg
   repo: https://github.com/nextgen-solutions-gt/saphic
  
 - name: proglass
-  description: A fixed width style with a blue glass design.
+  description: "A fixed width style with a blue glass design."
   image: /assets/images/proglass.jpg
   repo: https://github.com/nextgen-solutions-gt/proglass
 
 - name: milky_way
-  description: White background theme with clean page layout.
+  description: "White background theme with clean page layout."
   image: /assets/images/milky_way.jpg
   repo: https://github.com/nextgen-solutions-gt/milky_way
 
 - name: Cynthia
-  description: Black style with blue tones.
+  description: "Black style with blue tones."
   image: /assets/images/Cynthia.jpg
   repo: https://github.com/nextgen-solutions-gt/Cynthia
   
 - name: Allan-Style-SUBSILVER
-  description: Allan-Style-SUBSILVER for phpBB 3.3.x
+  description: "Allan-Style-SUBSILVER for phpBB 3.3.x"
   image: /assets/images/Allan-Style-SUBSILVER.jpg
   repo: https://github.com/nextgen-solutions-gt/Allan-Style-SUBSILVER
 
 - name: adinfinitum
-  description: Simple template in dark and red colours. This one is easy to modify by changing the top image. Also comes in a light bluish and a light redish version.
+  description: "Simple template in dark and red colours. This one is easy to modify by changing the top image. Also comes in a light bluish and a light redish version."
   image: /assets/images/adinfinitum.jpg
   repo: https://github.com/nextgen-solutions-gt/adinfinitum
