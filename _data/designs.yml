@@ -1,14 +1,19 @@
 - name: we_universal
-  description: Modern, clean and universal style for phpBB.
+  description: Modern, clean and universal style for phpBB 3.0, phpBB 3.1, phpBB 3.2 and phpBB 3.3.
   image: /assets/images/we_universal.jpg
   repo: https://github.com/nextgen-solutions-gt/we_universal
 
-- name: dark
-  description: Dark theme optimized for night usage.
-  image: /assets/images/dark.png
-  repo: https://github.com/nextgen-solutions-gt/dark
+- name: we_clearblue
+  description: D Modern and universal style for phpBB 3.3.x (based on prosilver). Kept in light, pastels colours and built with fluid layout width. 
+  image: /assets/images/we_clearblue.jpg
+  repo: https://github.com/nextgen-solutions-gt/we_clearblue
 
-- name: responsive
-  description: Fully responsive phpBB style.
-  image: /assets/images/responsive.png
-  repo: https://github.com/nextgen-solutions-gt/responsive
+- name: FI-Subice
+  description: This style is a update from the 2.0.x version of FI subice , its a style based on prosilver.
+  image: /assets/images/FI-Subice.jpg
+  repo: https://github.com/nextgen-solutions-gt/FI-Subice
+  
+- name: revolution
+  description:  Revolution style for phpBB 
+  image: /assets/images/revolution.jpg
+  repo: https://github.com/nextgen-solutions-gt/revolution
