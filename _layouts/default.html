@@ -12,9 +12,9 @@
 </head>
 <body>
 <header class="site-header">
-  <nav class="navbar container">
-    <div class="brand">
-      <a href="#top">nextgen solutions</a>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="#top" class="brand">nextgen solutions</a>
     </div>
 
     <ul class="nav-menu">
@@ -24,18 +24,17 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
 
-    <div class="nav-actions">
-      <button id="themeToggle" class="theme-toggle" aria-label="Theme">
+    <div class="nav-right">
+      <button id="themeToggle" class="theme-toggle">
         <i class="fa-solid fa-moon"></i>
       </button>
 
-      <button class="nav-toggle" aria-label="Menu">
+      <button class="nav-toggle">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
   </nav>
 </header>
-
 
   <main>
     {{ content }}
