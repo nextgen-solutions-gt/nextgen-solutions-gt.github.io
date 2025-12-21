@@ -3,9 +3,34 @@ layout: default
 title: nextgen solutions
 ---
 
-<section id="home" class="hero container">
-  <!-- hero -->
+<section id="home" class="hero">
+  <div class="hero-content container">
+    <span class="hero-badge">
+      Especialistas en phpBB
+    </span>
+
+    <h1>
+      Instalación, mantenimiento y
+      <span class="highlight">diseños profesionales</span>
+      para phpBB
+    </h1>
+
+    <p class="hero-text">
+      Ayudamos a comunidades a crecer con foros phpBB rápidos,
+      seguros y visualmente atractivos.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#contact" class="btn primary">
+        Contáctame
+      </a>
+      <a href="#designs" class="btn secondary">
+        Ver diseños
+      </a>
+    </div>
+  </div>
 </section>
+
 
 <section id="services" class="services container">
 <div class="card reveal">
