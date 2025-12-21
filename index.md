@@ -12,7 +12,7 @@ title: nextgen solutions
     <h1>
       Installation, maintenance, and
       <span class="highlight">professional designs</span>
-      para phpBB
+      for phpBB
     </h1>
 
     <p class="hero-text">
