@@ -78,9 +78,36 @@ title: nextgen solutions
 </section>
 
 <section id="portfolio" class="portfolio container">
-  <!-- portafolio -->
+  <h2 class="section-title">Portfolio</h2>
+
+  <div class="portfolio-grid">
+    {% for project in site.data.portfolio %}
+      <article class="portfolio-card reveal">
+        <img src="{{ project.image }}" alt="{{ project.name }}">
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.description }}</p>
+        {% if project.link %}
+        <a href="{{ project.link }}" target="_blank" class="btn">View Project</a>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
 </section>
 
 <section id="contact" class="contact container">
-  <!-- contacto -->
+  <h2 class="section-title">Contact Me</h2>
+
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form reveal">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="_replyto" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit" class="btn primary">Send Message</button>
+  </form>
 </section>
+
