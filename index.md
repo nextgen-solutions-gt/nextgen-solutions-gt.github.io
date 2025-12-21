@@ -4,28 +4,28 @@ title: nextgen solutions
 ---
 
 <section id="home" class="hero">
-  <div class="hero-content container">
+  <div class="container">
     <span class="hero-badge">
-      Especialistas en phpBB
+      phpBB specialists
     </span>
 
     <h1>
-      Instalación, mantenimiento y
-      <span class="highlight">diseños profesionales</span>
+      Installation, maintenance, and
+      <span class="highlight">professional designs</span>
       para phpBB
     </h1>
 
     <p class="hero-text">
-      Ayudamos a comunidades a crecer con foros phpBB rápidos,
-      seguros y visualmente atractivos.
+      We help communities grow with fast, secure, and visually appealing phpBB forums.
+      Secure and visually appealing.
     </p>
 
     <div class="hero-actions">
       <a href="#contact" class="btn primary">
-        Contáctame
+        Contact me
       </a>
       <a href="#designs" class="btn secondary">
-        Ver diseños
+        See designs
       </a>
     </div>
   </div>
