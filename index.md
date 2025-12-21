@@ -3,8 +3,11 @@ layout: default
 title: nextgen solutions
 ---
 
-<section class="services container">
+<section id="home" class="hero container">
+  <!-- hero -->
+</section>
 
+<section id="services" class="services container">
 <div class="card reveal">
   <i class="fa-solid fa-download"></i>
   <h3 data-i18n="install"></h3>
@@ -28,9 +31,9 @@ title: nextgen solutions
   <h3 data-i18n="designs"></h3>
   <p data-i18n="designsDesc"></p>
 </div>
-
 </section>
-<section class="designs container">
+
+<section id="designs" class="designs container">
   <h2 class="section-title">Diseños phpBB</h2>
 
   <div class="design-grid">
@@ -47,18 +50,6 @@ title: nextgen solutions
       </article>
     {% endfor %}
   </div>
-</section>
-
-<section id="home" class="hero container">
-  <!-- hero -->
-</section>
-
-<section id="services" class="services container">
-  <!-- servicios -->
-</section>
-
-<section id="designs" class="designs container">
-  <!-- diseños -->
 </section>
 
 <section id="portfolio" class="portfolio container">
