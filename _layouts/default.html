@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-lang="es" data-theme="light|dark">
+<html lang="en" data-theme="light|dark">
 <head>
   <meta charset="utf-8">
   <title>{{ page.title | default: site.title }}</title>
@@ -25,12 +25,6 @@
     </ul>
 
     <div class="nav-actions">
-      <!-- Idioma -->
-      <div class="lang-switch">
-        <button data-lang="es">ES</button>
-        <button data-lang="en">EN</button>
-      </div>
-
       <!-- Tema -->
       <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
         <i class="fa-solid fa-desktop"></i>
@@ -45,10 +39,6 @@
   <main>
     {{ content }}
   </main>
-<script>
-  window.TRANSLATIONS = {{ site.data.i18n | jsonify }};
-</script>
-	<script src="/assets/js/i18n.js"></script>
 	<script src="/assets/js/main.js"></script>
 	<script src="/assets/js/nav.js"></script>
 	<script src="/assets/js/mobile-nav.js"></script>
