@@ -219,130 +219,55 @@ h1 {
   top: 0;
   width: 100%;
   background: var(--bg);
-  border-bottom: 1px solid rgba(0,0,0,.08);
+  border-bottom: 1px solid var(--border);
   z-index: 1000;
 }
 
-[data-theme="dark"] .site-header {
-  border-color: rgba(255,255,255,.08);
-}
-
-.navbar {
-  height: 64px;
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 64px;
 }
 
-/* Brand */
-.nav-brand {
-  font-size: 1.1rem;
+.brand a {
   font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
 }
 
-.logo {
-  color: var(--primary);
-}
-
-.logo-muted {
-  color: var(--muted);
-  margin-left: 4px;
-}
-
-/* Menu */
-.nav-menu {
+.nav-links {
   display: flex;
-  gap: 32px;
+  gap: 1.5rem;
   list-style: none;
 }
 
-.nav-menu a {
+.nav-links a {
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
   position: relative;
 }
 
-.nav-menu a::after {
+.nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
   width: 0;
   height: 2px;
-  background: var(--primary);
-  transition: width .25s ease;
+  background: var(--accent);
+  transition: width 0.3s ease;
 }
 
-.nav-menu a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
   width: 100%;
 }
 
-/* Actions */
 .nav-actions {
   display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.lang-switch button {
-  background: none;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--muted);
-}
-
-.lang-switch button:hover {
-  color: var(--primary);
-}
-
-.theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.1rem;
-  cursor: pointer;
-  color: var(--text);
-}
-
-/* Mobile */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .nav-menu {
-    position: absolute;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: var(--bg);
-    flex-direction: column;
-    gap: 0;
-    display: none;
-    border-bottom: 1px solid rgba(0,0,0,.08);
-  }
-
-  [data-theme="dark"] .nav-menu {
-    border-color: rgba(255,255,255,.08);
-  }
-
-  .nav-menu li {
-    padding: 16px;
-    text-align: center;
-  }
-
-  .nav-menu.show {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
+  gap: 0.6rem;
 }
 
 .hero {
