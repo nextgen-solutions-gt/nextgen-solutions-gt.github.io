@@ -138,3 +138,41 @@ h1 {
     transition: none;
   }
 }
+
+.designs {
+  margin-top: 5rem;
+}
+
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.design-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.design-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.design-card h3 {
+  margin: 0.5rem 0;
+}
+
+.design-card .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}

@@ -30,3 +30,21 @@ title: nextgen solutions
 </div>
 
 </section>
+<section class="designs container">
+  <h2 class="section-title">Diseños phpBB</h2>
+
+  <div class="design-grid">
+    {% for design in site.data.designs %}
+      <article class="design-card reveal">
+        <img src="{{ design.image }}" alt="Preview {{ design.name }}">
+        
+        <h3>{{ design.name }}</h3>
+        <p>{{ design.description }}</p>
+
+        <a href="{{ design.repo }}" target="_blank" class="btn">
+          Ver repositorio
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
