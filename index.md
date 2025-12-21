@@ -97,17 +97,32 @@ title: nextgen solutions
 <section id="contact" class="contact container">
   <h2 class="section-title">Contact Me</h2>
 
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form reveal">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required>
+  <p class="contact-text">
+    Interested in working together or need help with phpBB?
+    You can reach me through any of the following platforms.
+  </p>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="_replyto" required>
+  <div class="contact-socials reveal">
+    <a href="https://github.com/yourusername" target="_blank" class="social github">
+      <i class="fa-brands fa-github"></i>
+      GitHub
+    </a>
 
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
+    <a href="https://discord.com/users/YOUR_ID" target="_blank" class="social discord">
+      <i class="fa-brands fa-discord"></i>
+      Discord
+    </a>
 
-    <button type="submit" class="btn primary">Send Message</button>
-  </form>
+    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social linkedin">
+      <i class="fa-brands fa-linkedin"></i>
+      LinkedIn
+    </a>
+
+    <a href="mailto:contact@yourdomain.com" class="social email">
+      <i class="fa-solid fa-envelope"></i>
+      Email
+    </a>
+  </div>
 </section>
+
 
