@@ -14,14 +14,12 @@ function setLanguage(lang) {
   });
 }
 
-// ⬇️ AQUÍ ESTABA EL ERROR
-document.querySelectorAll("[data-lang]").forEach(btn => {
+document.querySelectorAll("[data-lang-btn]").forEach(btn => {
   btn.addEventListener("click", () => {
-    setLanguage(btn.dataset.lang);
+    setLanguage(btn.dataset.langBtn);
   });
 });
 
-// idioma inicial
 const savedLang =
   localStorage.getItem("lang") ||
   (navigator.language.startsWith("es") ? "es" : "en");
