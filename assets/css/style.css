@@ -228,6 +228,7 @@ h1 {
   align-items: center;
   justify-content: space-between;
   height: 64px;
+  width: 1100px
 }
 
 .brand a {
@@ -238,7 +239,7 @@ h1 {
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 6.5rem;
   list-style: none;
 }
 
