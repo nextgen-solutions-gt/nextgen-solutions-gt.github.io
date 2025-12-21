@@ -5,7 +5,7 @@
   --card: #f5f5f5;
   --primary: #2563eb;
   --accent: var(--primary);
-  --border: --card;
+  --border: var(--card);
 }
 
 [data-theme="dark"] {

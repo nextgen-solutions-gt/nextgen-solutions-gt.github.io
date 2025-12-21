@@ -70,7 +70,7 @@ title: nextgen solutions
         <p>{{ design.description }}</p>
 
         <a href="{{ design.repo }}" target="_blank" class="btn">
-          Ver repositorio
+          View repository
         </a>
       </article>
     {% endfor %}
