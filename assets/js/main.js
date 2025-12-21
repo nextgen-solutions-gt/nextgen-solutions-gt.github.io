@@ -1,4 +1,4 @@
-const toggle = document.getElementById("themeToggle");
+const themeToggle = document.getElementById("themeToggle");
 const icon = toggle.querySelector("i");
 
 const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
