@@ -219,18 +219,18 @@ h1 {
   top: 0;
   width: 100%;
   background: var(--bg);
-  border-bottom: 1px solid rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,.05);
   z-index: 1000;
 }
 
-.navbar {
-  height: 64px;
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 72px;
 }
 
-.brand a {
+.nav-logo {
   font-size: 1.25rem;
   font-weight: 700;
   text-decoration: none;
@@ -239,50 +239,32 @@ h1 {
 
 .nav-menu {
   display: flex;
-  gap: 2rem;
+  gap: 2rem; /* 🔑 evita amontonamiento */
   list-style: none;
 }
 
 .nav-menu a {
   text-decoration: none;
-  font-size: .95rem;
   color: var(--muted);
-  position: relative;
+  font-weight: 500;
   transition: color .2s ease;
 }
 
 .nav-menu a:hover {
-  color: var(--text);
-}
-
-/* subrayado sutil */
-.nav-menu a::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary);
-  transition: width .25s ease;
-}
-
-.nav-menu a:hover::after {
-  width: 100%;
+  color: var(--primary);
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: .75rem;
+  gap: 1rem;
 }
 
-.theme-toggle,
-.nav-toggle {
-  background: none;
+.icon-btn {
+  background: var(--card);
   border: none;
-  font-size: 1.1rem;
-  color: var(--text);
+  padding: .5rem;
+  border-radius: 8px;
   cursor: pointer;
 }
 
@@ -290,18 +272,16 @@ h1 {
   display: none;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
   .nav-menu {
     position: fixed;
-    top: 64px;
+    top: 72px;
     left: 0;
     right: 0;
     background: var(--bg);
     flex-direction: column;
-    align-items: center;
     gap: 1.5rem;
-    padding: 2rem 0;
+    padding: 2rem;
     transform: translateY(-120%);
     transition: transform .3s ease;
   }
@@ -312,11 +292,10 @@ h1 {
 
   .nav-toggle {
     display: block;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
   }
-}
-
-main {
-  padding-top: 80px;
 }
 
 .hero {

@@ -12,12 +12,10 @@
 </head>
 <body>
 <header class="site-header">
-  <nav class="navbar container">
-    <div class="brand">
-      <a href="#top">nextgen solutions</a>
-    </div>
+  <nav class="nav container">
+    <a href="#home" class="nav-logo">nextgen solutions</a>
 
-    <ul class="nav-menu">
+    <ul class="nav-menu" id="navMenu">
       <li><a href="#services">Services</a></li>
       <li><a href="#designs">phpBB Designs</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
@@ -25,17 +23,16 @@
     </ul>
 
     <div class="nav-actions">
-      <button id="themeToggle" class="theme-toggle" aria-label="Theme">
+      <button id="themeToggle" class="icon-btn" aria-label="Theme">
         <i class="fa-solid fa-moon"></i>
       </button>
 
-      <button class="nav-toggle" aria-label="Menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
   </nav>
 </header>
-
 
   <main>
     {{ content }}
