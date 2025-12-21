@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap');
+
+//* <weight>: Use a value from 100 to 900
+// <uniquifier>: Use a unique and descriptive class name */
+
+.advent-pro-nextgen {
+  font-family: "Advent Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
 :root {
   --bg: #ffffff;
   --text: #111111;
@@ -54,6 +68,7 @@ header {
 .brand h1 {
   margin: 0;
   font-size: 1.8rem;
+  font-family: "Advent Pro";
 }
 
 .header-actions {

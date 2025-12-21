@@ -59,7 +59,7 @@ title: nextgen solutions
 </section>
 
 <section id="designs" class="designs container">
-  <h2 class="section-title">Diseños phpBB</h2>
+  <h2 class="section-title">phpBB Designs</h2>
 
   <div class="design-grid">
     {% for design in site.data.designs %}
