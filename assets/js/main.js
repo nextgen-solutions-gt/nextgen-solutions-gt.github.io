@@ -1,25 +1,47 @@
 const toggle = document.getElementById("themeToggle");
 const icon = toggle.querySelector("i");
 
-function applyTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("theme", theme);
-  icon.className =
-    theme === "dark"
-      ? "fa-solid fa-sun"
-      : "fa-solid fa-moon";
+const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+const THEMES = ["system", "light", "dark"];
+
+function getSystemTheme() {
+  return mediaQuery.matches ? "dark" : "light";
 }
 
-const savedTheme = localStorage.getItem("theme");
-const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+function applyTheme(mode) {
+  const theme = mode === "system" ? getSystemTheme() : mode;
 
-applyTheme(savedTheme || (systemDark ? "dark" : "light"));
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", mode);
 
+  icon.className =
+    mode === "system"
+      ? "fa-solid fa-desktop"
+      : mode === "dark"
+      ? "fa-solid fa-moon"
+      : "fa-solid fa-sun";
+}
+
+// inicial
+const saved = localStorage.getItem("theme") || "system";
+applyTheme(saved);
+
+// click → rota estado
 toggle.addEventListener("click", () => {
-  const current =
-    document.documentElement.getAttribute("data-theme");
-  applyTheme(current === "dark" ? "light" : "dark");
+  const current = localStorage.getItem("theme") || "system";
+  const next = THEMES[(THEMES.indexOf(current) + 1) % THEMES.length];
+  applyTheme(next);
 });
+
+// si cambia el sistema
+mediaQuery.addEventListener("change", () => {
+  if (localStorage.getItem("theme") === "system") {
+    applyTheme("system");
+  }
+});
+
+
 const reveals = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver(
