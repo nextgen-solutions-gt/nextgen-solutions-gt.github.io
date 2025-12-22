@@ -204,12 +204,6 @@ h1 {
   box-shadow: var(--shadow);
 }
 
-.design-card img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-}
-
 .design-card h3 {
   margin: 0.5rem 0;
 }
@@ -222,21 +216,6 @@ h1 {
   background: var(--accent);
   color: #fff;
   text-decoration: none;
-}
-
-.design-card img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.design-card img {
-  transition: transform 0.4s ease;
-}
-
-.design-card:hover img {
-  transform: scale(1.05);
 }
 
 .site-header {
@@ -520,22 +499,27 @@ h1 {
 
 .design-image {
   width: 100%;
-  height: 160px;          /* ← controla el tamaño aquí */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 14px;
   background: #000;
 }
 
 .design-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* ← magia: recorta sin deformar */
+  object-fit: cover;
   display: block;
+  transition: transform .35s ease;
+}
+
+.design-card:hover .design-image img {
+  transform: scale(1.06);
 }
 
 .design-preview {
-  max-width: 900px;          /* tamaño estándar */
-  margin: 32px auto 48px;
+  max-width: 880px;
+  margin: 3rem auto;
   border-radius: 18px;
   overflow: hidden;
   background: var(--card);
@@ -544,6 +528,7 @@ h1 {
 
 .design-preview img {
   width: 100%;
-  height: auto;              /* mantiene proporción */
+  height: auto;
   display: block;
 }
+
