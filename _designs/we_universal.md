@@ -2,7 +2,7 @@
 layout: design
 title: we_universal
 description: Modern, clean and universal style for phpBB.
-image: /assets/images/we_universal.png
+image: /assets/images/we_universal.jpg
 phpbb_versions: [3.0, 3.1, 3.2, 3.3]
 tags: [dark, responsive, phpbb-style]
 repo: https://github.com/nextgen-solutions-gt/we_universal

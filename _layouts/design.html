@@ -8,14 +8,14 @@ layout: default
 
   <img src="{{ page.image }}" alt="{{ page.title }}" class="design-preview">
 
-  <h3>Compatible con</h3>
+  <h3>Compatible with</h3>
   <ul class="badges">
     {% for v in page.phpbb_versions %}
       <li>phpBB {{ v }}</li>
     {% endfor %}
   </ul>
 
-  <h3>Características</h3>
+  <h3>Features</h3>
   {{ content }}
 
   <a href="{{ page.repo }}" class="btn" target="_blank">
