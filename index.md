@@ -62,20 +62,21 @@ title: nextgen solutions
   <h2 class="section-title">phpBB Designs</h2>
 
   <div class="design-grid">
-    {% for design in site.data.designs %}
+    {% for design in site.designs %}
       <article class="design-card reveal">
-        <img src="{{ design.image }}" alt="Preview {{ design.name }}">
-        
-        <h3>{{ design.name }}</h3>
+        <img src="{{ design.image }}" alt="Preview {{ design.title }}">
+
+        <h3>{{ design.title }}</h3>
         <p>{{ design.description }}</p>
 
-        <a href="{{ design.repo }}" target="_blank" class="btn">
-          View repository
+        <a href="{{ design.url }}" class="btn">
+          View details
         </a>
       </article>
     {% endfor %}
   </div>
 </section>
+
 
 <section id="portfolio" class="portfolio container">
   <h2 class="section-title">Portfolio</h2>

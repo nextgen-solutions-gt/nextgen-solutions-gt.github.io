@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<article class="design container">
+  <h1>{{ page.title }}</h1>
+  <p class="lead">{{ page.description }}</p>
+
+  <img src="{{ page.image }}" alt="{{ page.title }}" class="design-preview">
+
+  <h3>Compatible con</h3>
+  <ul class="badges">
+    {% for v in page.phpbb_versions %}
+      <li>phpBB {{ v }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>Características</h3>
+  {{ content }}
+
+  <a href="{{ page.repo }}" class="btn" target="_blank">
+    View repository
+  </a>
+</article>
