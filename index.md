@@ -64,7 +64,9 @@ title: nextgen solutions
   <div class="design-grid">
     {% for design in site.designs %}
       <article class="design-card reveal">
-        <img src="{{ design.image }}" alt="Preview {{ design.title }}">
+<div class="design-image">
+  <img src="{{ design.image }}" alt="Preview {{ design.title }}">
+</div>
 
         <h3>{{ design.title }}</h3>
         <p>{{ design.description }}</p>
