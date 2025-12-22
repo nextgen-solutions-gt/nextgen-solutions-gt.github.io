@@ -251,25 +251,44 @@ h1 {
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 64px;
+  height: 72px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.brand a {
+  color: var(--text);
+  text-decoration: none;
 }
 
 .nav-links {
+  margin-left: auto; /* 👈 empuja el menú a la derecha */
   display: flex;
-  gap: 32px;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
 }
 
 .nav-links a {
   color: var(--text);
   text-decoration: none;
   font-weight: 500;
+  opacity: 0.85;
+}
+
+.nav-links a:hover {
+  opacity: 1;
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-left: 16px;
 }
 
 .nav-toggle {
@@ -277,57 +296,23 @@ h1 {
 }
 
 @media (max-width: 768px) {
-  .nav-toggle {
-    display: inline-flex;
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-    color: var(--text);
-  }
-
   .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
+    position: absolute;
+    top: 72px;
+    right: 0;
     background: var(--bg);
     flex-direction: column;
-    padding: 96px 24px;
-    gap: 24px;
-    transition: right .3s ease;
-    box-shadow: -10px 0 30px rgba(0,0,0,.15);
-    z-index: 1001;
-  }
-
-  .nav-links.open {
-    right: 0;
-  }
-
-  .nav-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.4);
-    backdrop-filter: blur(4px);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .3s ease;
-    z-index: 1000;
-  }
-
-  .nav-overlay.open {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .theme-switch {
+    width: 100%;
+    padding: 16px;
     display: none;
   }
 
-  .nav-links .theme-switch {
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-toggle {
     display: inline-flex;
-    margin-top: 24px;
   }
 }
 
