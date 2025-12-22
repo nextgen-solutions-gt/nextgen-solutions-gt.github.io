@@ -25,25 +25,24 @@
     </ul>
 
     <div class="nav-actions">
-      <!-- Tema -->
-	  <button class="nav-toggle" aria-label="Abrir menú">
-		<i class="fa-solid fa-bars"></i>
-	  </button>	  
-<div class="theme-switch" role="group" aria-label="Theme selector">
-  <button data-theme-select="system" aria-label="Sistema">
-    <i class="fa-solid fa-desktop"></i>
-  </button>
-  <button data-theme-select="light" aria-label="Claro">
-    <i class="fa-solid fa-sun"></i>
-  </button>
-  <button data-theme-select="dark" aria-label="Oscuro">
-    <i class="fa-solid fa-moon"></i>
-  </button>
-</div>
+      <!-- Theme -->
+      <div class="theme-switch">
+        <button data-theme-select="system"><i class="fa-solid fa-desktop"></i></button>
+        <button data-theme-select="light"><i class="fa-solid fa-sun"></i></button>
+        <button data-theme-select="dark"><i class="fa-solid fa-moon"></i></button>
+      </div>
 
-	</div>
+      <!-- Mobile toggle -->
+      <button class="nav-toggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
   </nav>
-</header
+
+  <!-- Overlay -->
+  <div class="nav-overlay"></div>
+</header>
+
 
   <main>
     {{ content }}
