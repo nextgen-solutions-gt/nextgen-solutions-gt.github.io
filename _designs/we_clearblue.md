@@ -5,7 +5,7 @@ description: Modern style in pastel colours with integrated image slider and soc
 image: /assets/images/we_clearblue.jpg
 phpbb_versions: [3.3]
 tags: [responsive, phpbb-style]
-repo: https://github.com/nextgen-solutions-gt/we_cleablue
+repo: https://github.com/nextgen-solutions-gt/we_clearblue
 ---
 
 ## Description
