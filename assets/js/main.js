@@ -61,30 +61,47 @@ const observer = new IntersectionObserver(
 reveals.forEach(el => observer.observe(el));
 
 (() => {
-  const buttons = document.querySelectorAll(".filter-btn");
   const cards = document.querySelectorAll(".design-card");
+  const tags = document.querySelectorAll(".tag");
 
-  if (!buttons.length) return;
+  let activeTag = null;
 
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const filter = btn.dataset.filter;
+  function showAll() {
+    cards.forEach(card => {
+      card.style.display = "";
+    });
 
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+    tags.forEach(tag => tag.classList.remove("active"));
+    activeTag = null;
+  }
 
-      cards.forEach(card => {
-        if (filter === "all") {
-          card.style.display = "";
-          return;
-        }
+  function filter(tagValue) {
+    cards.forEach(card => {
+      const cardTags = card.dataset.tags || "";
+      card.style.display = cardTags.includes(tagValue) ? "" : "none";
+    });
+  }
 
-        const tags = card.dataset.tags.split(" ");
-        card.style.display = tags.includes(filter) ? "" : "none";
-      });
+  tags.forEach(tag => {
+    tag.addEventListener("click", () => {
+      const tagValue = tag.dataset.filter;
+
+      // 🔁 Si el tag ya está activo → desactivar
+      if (activeTag === tagValue) {
+        showAll();
+        return;
+      }
+
+      // 🔒 Activar nuevo tag (desactiva los demás)
+      tags.forEach(t => t.classList.remove("active"));
+      tag.classList.add("active");
+
+      activeTag = tagValue;
+      filter(tagValue);
     });
   });
 })();
+
 
 (() => {
   const cards = document.querySelectorAll(".design-card");
