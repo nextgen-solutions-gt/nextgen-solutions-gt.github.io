@@ -280,20 +280,35 @@ h1 {
 }
 
 .hero {
-  min-height: 100vh;
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+
+  min-height: auto;        /* ← elimina fullscreen */
   display: flex;
   align-items: center;
+
   background:
     radial-gradient(
-      600px circle at 15% 20%,
-      rgba(37,99,235,.18),
+      500px circle at 20% 20%,
+      rgba(37, 99, 235, 0.12),
       transparent 70%
     ),
     radial-gradient(
-      800px circle at 85% 80%,
-      rgba(96,165,250,.18),
-      transparent 75%
+      600px circle at 80% 80%,
+      rgba(96, 165, 250, 0.12),
+      transparent 70%
     );
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 0.8rem;
+}
+
+.hero-text {
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-grid {
@@ -313,6 +328,17 @@ h1 {
   max-width: 520px;
   border-radius: 18px;
   box-shadow: 0 30px 60px rgba(0,0,0,.2);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 4.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 900px) {
