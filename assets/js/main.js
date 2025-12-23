@@ -59,3 +59,29 @@ const observer = new IntersectionObserver(
 );
 
 reveals.forEach(el => observer.observe(el));
+
+(() => {
+  const buttons = document.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll(".design-card");
+
+  if (!buttons.length) return;
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const filter = btn.dataset.filter;
+
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      cards.forEach(card => {
+        if (filter === "all") {
+          card.style.display = "";
+          return;
+        }
+
+        const tags = card.dataset.tags.split(" ");
+        card.style.display = tags.includes(filter) ? "" : "none";
+      });
+    });
+  });
+})();

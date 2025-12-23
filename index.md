@@ -31,11 +31,31 @@ hero: home
 </section>
 
 <section id="designs" class="designs container">
+{% assign all_tags = "" | split: "" %}
+{% for design in site.designs %}
+  {% for tag in design.tags %}
+    {% unless all_tags contains tag %}
+      {% assign all_tags = all_tags | push: tag %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+
+<div class="design-filters">
+  <button class="filter-btn active" data-filter="all">
+    All
+  </button>
+
+  {% for tag in all_tags %}
+    <button class="filter-btn" data-filter="{{ tag | slugify }}">
+      {{ tag }}
+    </button>
+  {% endfor %}
+</div>
   <h2 class="section-title">phpBB Designs</h2>
 
   <div class="design-grid">
     {% for design in site.designs %}
-      <article class="design-card reveal">
+      <article class="design-card reveal" data-tags="{% for tag in design.tags %}{{ tag | slugify }} {% endfor %}">
 	<div class="design-image">
 		<img src="{{ design.image }}" alt="Preview {{ design.title }}">
 	</div>

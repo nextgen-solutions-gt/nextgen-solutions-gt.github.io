@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+
+<article class="design container">
 {% if page.tags %}
 <div class="design-tags">
   {% for tag in page.tags %}
@@ -8,9 +10,6 @@ layout: default
   {% endfor %}
 </div>
 {% endif %}
-
-<article class="design container">
-
   <h3>Compatible with</h3>
   <ul class="badges">
     {% for v in page.phpbb_versions %}
