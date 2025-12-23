@@ -51,23 +51,36 @@ hero: home
   </div>
 </section>
 
-
 <section id="portfolio" class="portfolio container">
-  <h2 class="section-title">Portfolio</h2>
+  <div class="section-head">
+    <h2 class="section-title">Portfolio</h2>
+    <p class="section-subtitle">
+      Selected projects and real work for communities and forums
+    </p>
+  </div>
 
   <div class="portfolio-grid">
     {% for project in site.data.portfolio %}
       <article class="portfolio-card reveal">
-        <img src="{{ project.image }}" alt="{{ project.name }}">
-        <h3>{{ project.name }}</h3>
-        <p>{{ project.description }}</p>
-        {% if project.link %}
-        <a href="{{ project.link }}" target="_blank" class="btn">View Project</a>
-        {% endif %}
+        <div class="portfolio-image">
+          <img src="{{ project.image }}" alt="{{ project.name }}">
+        </div>
+
+        <div class="portfolio-body">
+          <h3>{{ project.name }}</h3>
+          <p>{{ project.description }}</p>
+
+          {% if project.link %}
+            <a href="{{ project.link }}" target="_blank" class="btn small">
+              View project
+            </a>
+          {% endif %}
+        </div>
       </article>
     {% endfor %}
   </div>
 </section>
+
 
 <section id="contact" class="contact container">
   <h2 class="section-title">Contact Me</h2>
