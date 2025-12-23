@@ -722,3 +722,53 @@ h1 {
   display: block;
 }
 
+/* Bloques de contenido en páginas de diseño */
+.design h2 {
+  font-size: 1.4rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Card visual para cada sección */
+.design h2 + p,
+.design h2 + ul,
+.design h2 ~ p,
+.design h2 ~ ul {
+  background: var(--card);
+  padding: 1.5rem 1.8rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
+
+/* Ajustes de texto */
+.design p {
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* Features list */
+.design ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.design ul li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+}
+
+/* Check icon elegante */
+.design ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
