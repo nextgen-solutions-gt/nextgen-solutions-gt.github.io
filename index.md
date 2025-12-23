@@ -3,34 +3,34 @@ layout: default
 title: nextgen solutions
 ---
 
-<section id="home" class="hero">
-  <div class="container">
-    <span class="hero-badge">
-      phpBB specialists
-    </span>
+<section class="design-hero">
+  <div class="design-hero-inner container">
 
-    <h1>
-      Installation, maintenance, and
-      <span class="highlight">professional designs</span>
-      for phpBB
-    </h1>
+    <div class="design-hero-text">
+      <span class="hero-badge">phpBB Design</span>
 
-    <p class="hero-text">
-      We help communities grow with fast, secure, and visually appealing phpBB forums.
-      Secure and visually appealing.
-    </p>
+      <h1 class="design-title">{{ page.title }}</h1>
 
-    <div class="hero-actions">
-      <a href="#contact" class="btn primary">
-        Contact me
-      </a>
-      <a href="#designs" class="btn secondary">
-        See designs
-      </a>
+      <p class="hero-text">
+        {{ page.description }}
+      </p>
+
+      <div class="design-actions">
+        <a href="{{ page.repo }}" class="btn primary" target="_blank">
+          View repository
+        </a>
+        <a href="#features" class="btn secondary">
+          Features
+        </a>
+      </div>
     </div>
+
+    <div class="design-hero-media">
+      <img src="{{ page.image }}" alt="{{ page.title }} preview">
+    </div>
+
   </div>
 </section>
-
 
 <section id="services" class="services container">
 <div class="card reveal">

@@ -154,7 +154,6 @@ h1 {
   box-shadow: 0 1px 3px rgba(0,0,0,.15);
 }
 
-
 .card {
   text-align: left;
 }
@@ -328,6 +327,69 @@ h1 {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+/* =========================
+   HERO — DESIGN PAGES
+========================= */
+
+.design-hero {
+  padding-top: 120px; /* evita header fixed */
+  padding-bottom: 80px;
+  background:
+    radial-gradient(
+      600px circle at 20% 20%,
+      rgba(37, 99, 235, 0.12),
+      transparent 80%
+    ),
+    radial-gradient(
+      800px circle at 80% 80%,
+      rgba(96, 165, 250, 0.12),
+      transparent 80%
+    );
+}
+
+.design-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.design-title {
+  font-size: clamp(2.3rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.design-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.design-hero-media {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: 0 25px 60px rgba(0,0,0,.18);
+}
+
+.design-hero-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .design-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .design-hero-media {
+    order: -1;
+  }
 }
 
 .btn {
