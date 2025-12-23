@@ -10,9 +10,8 @@ repo: https://github.com/nextgen-solutions-gt/we_clearblue
 
 ## Description
 
-**we_clearblue** is a modern style in pastel colours with integrated image slider and social buttons in footer (hidden by default). 
-Dedicated for phpBB 3.3.x. It uses principles of flat design and Responsive Web Design technique. Built with HTML5 & CSS3. 
-Fits great on desktops and various mobile devices. Suitable for any kind of forum communities. Compatible with all major browsers.
+**we_clearblue** Is modern and universal style in light pastels colours. Works with phpBB 3.3.x 
+Built with HTML5 & CSS3 features. Fits great on desktops and various mobile devices. Easy to customise for own needs..
 
 ## Features
 
