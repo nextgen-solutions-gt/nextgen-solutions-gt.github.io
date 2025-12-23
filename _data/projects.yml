@@ -1,9 +1,0 @@
-- slug: we_universal
-  name: WE Universal
-  description: Modern, clean and universal phpBB style
-  preview: https://raw.githubusercontent.com/nextgen-solutions-gt/phpbb-design-previews/main/we_universal/preview.png
-  tags:
-    - phpbb-style
-    - responsive
-    - dark
-  repo: https://github.com/nextgen-solutions-gt/we_universal

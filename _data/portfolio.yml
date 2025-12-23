@@ -1,9 +1,9 @@
 - name: "Alicante Liberal"
-  description: "Sitio español de escorts."
+  description: "Spanish escort site."
   image: "/assets/images/portfolio/alicanteliberal.png"
   link: ""
 
-- name: "Forum Analytics Tool"
-  description: "Tool for monitoring forum activity."
-  image: "/assets/images/portfolio2.png"
+- name: "Foro Apuestas"
+  description: "Forum dedicated to sports betting."
+  image: "/assets/images/portfolio/foroapuestas.png"
   link: ""

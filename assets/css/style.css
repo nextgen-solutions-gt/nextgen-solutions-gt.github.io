@@ -564,11 +564,45 @@ h1 {
   margin-bottom: 1.2rem;
 }
 
+.portfolio-card:hover .btn.small {
+  filter: brightness(1.1);
+}
+
 /* Button */
 .btn.small {
-  padding: 0.45rem 1rem;
+  padding: 0.45rem 1.1rem;
   font-size: 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--primary)
+  );
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
 }
+
+/* Hover */
+.btn.small:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.05);
+}
+
+/* Active */
+.btn.small:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 
 .contact {
   text-align: center;
