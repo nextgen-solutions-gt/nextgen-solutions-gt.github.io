@@ -48,7 +48,7 @@ body {
 }
 
 main {
-  padding-top: 96px; /* mayor que la altura del header */
+  padding-top: 72px; /* mayor que la altura del header */
 }
 
 .container {
@@ -280,7 +280,8 @@ h1 {
 }
 
 .hero {
-  padding-top: 5rem;
+  padding-top: 0;
+  min-height: calc(100vh - 72px);
   padding-bottom: 4rem;
 
   min-height: auto;        /* ← elimina fullscreen */
