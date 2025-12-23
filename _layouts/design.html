@@ -1,6 +1,13 @@
 ---
 layout: default
 ---
+{% if page.tags %}
+<div class="design-tags">
+  {% for tag in page.tags %}
+    <span class="tag tag-{{ tag | slugify }}">{{ tag }}</span>
+  {% endfor %}
+</div>
+{% endif %}
 
 <article class="design container">
 
