@@ -6,6 +6,7 @@ image: /assets/images/adinfinitum.jpg
 phpbb_versions: [3.3]
 tags: [dark, responsive, phpbb-style]
 repo: https://github.com/nextgen-solutions-gt/adinfinitum
+hero: design
 ---
 
 ## Description

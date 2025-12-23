@@ -6,6 +6,7 @@ image: /assets/images/Saphic.jpg
 phpbb_versions: [3.3]
 tags: [responsive, phpbb-style]
 repo: https://github.com/nextgen-solutions-gt/saphic
+hero: design
 ---
 
 ## Description

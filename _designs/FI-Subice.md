@@ -6,6 +6,7 @@ image: /assets/images/FI-Subice.jpg
 phpbb_versions: [3.3]
 tags: [responsive, phpbb-style]
 repo: https://github.com/nextgen-solutions-gt/FI-Subice
+hero: design
 ---
 
 ## Description

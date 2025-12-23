@@ -3,12 +3,6 @@ layout: default
 ---
 
 <article class="design container">
-  <h1>{{ page.title }}</h1>
-  <p class="lead">{{ page.description }}</p>
-
-<div class="design-preview">
-  <img src="{{ page.image }}" alt="{{ page.title }}">
-</div>
 
   <h3>Compatible with</h3>
   <ul class="badges">
@@ -17,10 +11,11 @@ layout: default
     {% endfor %}
   </ul>
 
-  <h3>Features</h3>
+  <h3 id="features">Features</h3>
   {{ content }}
 
-  <a href="{{ page.repo }}" class="btn" target="_blank">
+  <a href="{{ page.repo }}" class="btn primary" target="_blank">
     View repository
   </a>
+
 </article>

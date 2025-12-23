@@ -44,7 +44,11 @@
 	</div>
   </nav>
 </header>
-
+{% if page.hero == "design" %}
+  {% include hero-design.html %}
+{% elsif page.hero == "home" %}
+  {% include hero-home.html %}
+{% endif %}
   <main>
     {{ content }}
   </main>

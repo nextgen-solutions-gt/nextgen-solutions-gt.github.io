@@ -6,6 +6,7 @@ image: /assets/images/Cynthia.jpg
 phpbb_versions: [3.3]
 tags: [dark, responsive, phpbb-style]
 repo: https://github.com/nextgen-solutions-gt/Cynthia
+hero: design
 ---
 
 ## Description
