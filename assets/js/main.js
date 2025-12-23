@@ -85,3 +85,25 @@ reveals.forEach(el => observer.observe(el));
     });
   });
 })();
+
+(() => {
+  const cards = document.querySelectorAll(".design-card");
+  const tagButtons = document.querySelectorAll(".tag");
+
+  function filterByTag(tag) {
+    cards.forEach(card => {
+      const tags = card.dataset.tags || "";
+      card.style.display = tags.includes(tag) ? "" : "none";
+    });
+
+    tagButtons.forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.filter === tag);
+    });
+  }
+
+  tagButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterByTag(btn.dataset.filter);
+    });
+  });
+})();
