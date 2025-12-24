@@ -26,3 +26,14 @@
 
   window.addEventListener("scroll", onScroll);
 })();
+
+(() => {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  const onScroll = () => {
+    header.classList.toggle("scrolled", window.scrollY > 10);
+  };
+
+  window.addEventListener("scroll", onScroll);
+})();
