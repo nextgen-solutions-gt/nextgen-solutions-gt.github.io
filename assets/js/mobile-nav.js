@@ -1,25 +1,23 @@
 (() => {
-  const navToggle = document.querySelector(".nav-toggle");
-  if (!navToggle) return;
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.querySelector(".mobile-menu");
+  const icon = toggle.querySelector("i");
 
-  const nav = document.querySelector(".nav-links");
-  const links = nav.querySelectorAll("a");
-  const icon = navToggle.querySelector("i");
-
-  navToggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("open");
-    document.body.classList.toggle("menu-open", isOpen);
+  toggle.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("open");
 
     icon.className = isOpen
       ? "fa-solid fa-xmark"
       : "fa-solid fa-bars";
+
+    menu.setAttribute("aria-hidden", !isOpen);
   });
 
-  links.forEach(link => {
+  menu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
-      nav.classList.remove("open");
-      document.body.classList.remove("menu-open");
+      menu.classList.remove("open");
       icon.className = "fa-solid fa-bars";
+      menu.setAttribute("aria-hidden", "true");
     });
   });
 })();
