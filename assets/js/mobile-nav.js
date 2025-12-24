@@ -1,49 +1,22 @@
 (() => {
   const navToggle = document.querySelector(".nav-toggle");
-  const icon = navToggle?.querySelector("i");
+  if (!navToggle) return;
 
-  // Crea overlay dinámicamente
-  const overlay = document.createElement("div");
-  overlay.className = "mobile-overlay";
-  document.body.appendChild(overlay);
+  const nav = document.querySelector(".nav-links");
+  const links = nav.querySelectorAll("a");
+  const icon = navToggle.querySelector("i");
 
-  // Clona los links del nav principal para el panel movil
-  const navLinks = document.querySelector(".nav-links");
-  const mobileNav = document.createElement("div");
-  mobileNav.className = "nav-mobile";
-
-  // Copiar enlaces
-  navLinks.querySelectorAll("a").forEach(link => {
-    const a = link.cloneNode(true);
-    mobileNav.appendChild(a);
+  navToggle.addEventListener("click", () => {
+    nav.classList.toggle("open");
+    icon.className = nav.classList.contains("open")
+      ? "fa-solid fa-xmark"
+      : "fa-solid fa-bars";
   });
 
-  document.body.appendChild(mobileNav);
-
-  function openMenu() {
-    mobileNav.classList.add("open");
-    overlay.classList.add("active");
-    document.body.style.overflow = "hidden";
-    icon.className = "fa-solid fa-xmark";
-    navToggle.setAttribute("aria-label", "Cerrar menú");
-  }
-
-  function closeMenu() {
-    mobileNav.classList.remove("open");
-    overlay.classList.remove("active");
-    document.body.style.overflow = ""; // restaurar scroll
-    icon.className = "fa-solid fa-bars";
-    navToggle.setAttribute("aria-label", "Abrir menú");
-  }
-
-  navToggle?.addEventListener("click", () => {
-    mobileNav.classList.contains("open") ? closeMenu() : openMenu();
-  });
-
-  overlay.addEventListener("click", closeMenu);
-
-  // Cerrar al hacer click en un enlace
-  mobileNav.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", closeMenu);
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      icon.className = "fa-solid fa-bars";
+    });
   });
 })();
