@@ -115,6 +115,11 @@ hero: home
     Interested in working together or need help with phpBB?
     You can reach me through any of the following platforms.
   </p>
+<div class="contact-cta reveal">
+  <a href="/custom-work/" class="btn primary large">
+    Request custom work
+  </a>
+</div>
 
   <div class="contact-socials reveal">
     <a href="https://github.com/yourusername" target="_blank" class="social github">
