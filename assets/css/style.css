@@ -308,7 +308,6 @@ body.menu-open .site-header {
   gap: 0.6rem;
 }
 
-
 /* BOTÓN MOBILE */
 .nav-toggle {
   display: none;
@@ -332,7 +331,8 @@ body.menu-open .site-header {
   gap: 1.4rem;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-
+  touch-action: pan-y;
+  will-change: transform, opacity;
   transform: translateY(-20px);
   opacity: 0;
   pointer-events: none;
@@ -344,6 +344,9 @@ body.menu-open .site-header {
   z-index: 999;
 }
 
+.mobile-menu.dragging {
+  transition: none !important;
+}
 
 /* LINKS */
 .mobile-menu a {
