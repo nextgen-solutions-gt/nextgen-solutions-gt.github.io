@@ -781,53 +781,6 @@ h1 {
   margin: 1.5rem 0 2.5rem;
 }
 
-/* Base tag */
-.tag {
-  padding: 0.35rem 0.9rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  background: var(--card);
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-
-/* Dark mode style */
-.tag-dark {
-  background: #111;
-  color: #fff;
-  border-color: #111;
-}
-
-[data-theme="dark"] .tag-dark {
-  background: #000;
-}
-
-/* Responsive */
-.tag-responsive {
-  background: rgba(37, 99, 235, 0.15);
-  color: var(--primary);
-  border-color: rgba(37, 99, 235, 0.25);
-}
-
-/* phpBB */
-.tag-phpbb-style,
-.tag-phpbb {
-  background: rgba(16, 185, 129, 0.15);
-  color: #10b981;
-  border-color: rgba(16, 185, 129, 0.3);
-}
-
-/* Performance */
-.tag-optimized,
-.tag-performance {
-  background: rgba(245, 158, 11, 0.15);
-  color: #f59e0b;
-  border-color: rgba(245, 158, 11, 0.3);
-}
-
 .design-filters {
   display: flex;
   flex-wrap: wrap;
@@ -866,20 +819,6 @@ h1 {
   margin: 0.4rem 0 0.6rem;
 }
 
-.tag {
-  font-size: 0.65rem;
-  font-weight: 600;
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-/* Dark mode */
-[data-theme="dark"] .tag {
-  background: rgba(96, 165, 250, 0.18);
-}
-
 .contact-cta {
   margin: 2.5rem 0 3rem;
   text-align: center;
@@ -888,4 +827,58 @@ h1 {
 .btn.large {
   padding: 0.9rem 2rem;
   font-size: 1.05rem;
+}
+
+/* Base tag */
+.tag {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* Dark */
+.tag-dark {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+[data-theme="dark"] .tag-dark {
+  background: #000;
+}
+
+/* Responsive */
+.tag-responsive {
+  background: rgba(37, 99, 235, 0.15);
+  color: var(--primary);
+  border-color: rgba(37, 99, 235, 0.25);
+}
+
+/* phpBB */
+.tag-phpbb,
+.tag-phpbb-style {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* Performance */
+.tag-performance,
+.tag-optimized {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.tag.sm {
+  font-size: 0.6rem;
+  padding: 0.2rem 0.5rem;
 }
