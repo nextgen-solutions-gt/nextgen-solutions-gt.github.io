@@ -87,74 +87,47 @@ reveals.forEach(el => observer.observe(el));
 })();
 
 document.addEventListener("DOMContentLoaded", () => {
-  const commitSections = document.querySelectorAll(".recent-commits");
+  document.querySelectorAll(".recent-commits").forEach(section => {
+    const repo = section.dataset.repo;
+    const list = section.querySelector(".commit-list");
 
-  commitSections.forEach(section => {
-    const repo = section.dataset.repo; // usar data-attribute
-    if (!repo) return;
+    if (!repo || !list) return;
 
-    fetch(`https://api.github.com/repos/${repo}/commits?per_page=3`)
-      .then(res => res.json())
+    fetch(`https://api.github.com/repos/${repo}/commits?per_page=5`)
+      .then(r => r.json())
       .then(commits => {
-        const grid = section.querySelector(".commits-grid");
-        if (!commits || commits.length === 0 || commits.message === "Not Found") {
-          grid.innerHTML = "<p>No commits found or repo is private.</p>";
+        if (!Array.isArray(commits)) {
+          list.innerHTML = "<li>No commits available</li>";
           return;
         }
 
-        commits.forEach(commit => {
-          const commitEl = document.createElement("div");
-          commitEl.classList.add("commit-card");
-
-          const message = commit.commit.message.split("\n")[0];
-          const date = new Date(commit.commit.author.date).toLocaleDateString();
-          const url = commit.html_url;
-
-          commitEl.innerHTML = `
-            <p class="commit-message">${message}</p>
-            <p class="commit-date">${date}</p>
-            <a href="${url}" target="_blank" class="commit-link">View on GitHub</a>
-          `;
-
-          grid.appendChild(commitEl);
-        });
-      })
-      .catch(err => {
-        section.querySelector(".commits-grid").innerHTML = "<p>Could not load commits.</p>";
-        console.error(err);
-      });
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const commitSections = document.querySelectorAll(".recent-commits");
-
-  commitSections.forEach(section => {
-    const repo = section.dataset.repo; // e.g., "nextgen-solutions-gt/we_universal"
-    const commitList = section.querySelector(".commit-list");
-
-    if (!repo) return;
-
-    fetch(`https://api.github.com/repos/${repo}/commits?per_page=5`)
-      .then(res => res.json())
-      .then(commits => {
-        if (!Array.isArray(commits)) return;
-        commits.forEach(commit => {
+        commits.forEach(c => {
           const li = document.createElement("li");
           li.className = "commit-item";
-          li.dataset.message = commit.commit.message; // mensaje completo
+          li.dataset.message = c.commit.message;
+
+          const date = new Date(c.commit.author.date)
+            .toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "short",
+              day: "numeric"
+            });
 
           li.innerHTML = `
-            <span class="commit-sha">${commit.sha.slice(0,7)}</span> - 
-            <span class="commit-msg">${commit.commit.message.slice(0,50)}${commit.commit.message.length>50?'…':''}</span>
+            <a href="${c.html_url}" target="_blank" class="commit-main">
+              <span class="commit-sha">${c.sha.slice(0, 7)}</span>
+              <span class="commit-msg">
+                ${c.commit.message.split("\n")[0]}
+              </span>
+            </a>
+            <span class="commit-date">${date}</span>
           `;
-          
-          commitList.appendChild(li);
+
+          list.appendChild(li);
         });
       })
-      .catch(err => {
-        console.error("Error loading commits:", err);
-        commitList.innerHTML = "<li>No commits found</li>";
+      .catch(() => {
+        list.innerHTML = "<li>Error loading commits</li>";
       });
   });
 });
