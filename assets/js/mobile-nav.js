@@ -1,21 +1,22 @@
-const toggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('#primary-navigation');
+(() => {
+  const navToggle = document.querySelector(".nav-toggle");
+  if (!navToggle) return;
 
-toggle.addEventListener('click', () => {
-  const open = nav.getAttribute('data-open') === 'true';
+  const nav = document.querySelector(".nav-links");
+  const links = nav.querySelectorAll("a");
+  const icon = navToggle.querySelector("i");
 
-  nav.setAttribute('data-open', !open);
-  toggle.setAttribute('aria-expanded', !open);
-
-  toggle.innerHTML = open
-    ? '<i class="fa-solid fa-bars"></i>'
-    : '<i class="fa-solid fa-xmark"></i>';
-});
-
-nav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    nav.setAttribute('data-open', 'false');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+  navToggle.addEventListener("click", () => {
+    nav.classList.toggle("open");
+    icon.className = nav.classList.contains("open")
+      ? "fa-solid fa-xmark"
+      : "fa-solid fa-bars";
   });
-});
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      icon.className = "fa-solid fa-bars";
+    });
+  });
+})();
