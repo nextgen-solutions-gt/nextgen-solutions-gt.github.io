@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<main class="portfolio container">
+
+  {% include breadcrumbs.html %}
+
+  <h1 class="section-title">
+    {% if page.category %}
+      {{ page.title }} ({{ page.category }})
+    {% else %}
+      {{ page.title }}
+    {% endif %}
+  </h1>
+
+  <div class="design-grid">
+    {% assign designs_to_show = site.data.designs %}
+
+    {% if page.category %}
+      {% assign designs_to_show = designs_to_show | where_exp:"item","item.categories contains page.category" %}
+    {% endif %}
+
+    {% for design in designs_to_show %}
+      <article class="design-card reveal">
+        <img src="{{ design.image }}" alt="{{ design.name }}">
+        <h3>{{ design.name }}</h3>
+        <p>{{ design.description }}</p>
+        <a href="/designs/{{ design.name | slugify }}/" class="btn">View Design</a>
+      </article>
+    {% endfor %}
+
+    {% if designs_to_show.size == 0 %}
+      <p>No designs found for this category.</p>
+    {% endif %}
+  </div>
+
+</main>
