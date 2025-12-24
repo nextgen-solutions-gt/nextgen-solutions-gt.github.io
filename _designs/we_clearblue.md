@@ -4,6 +4,7 @@ title: we_clearblue
 description: Modern style in pastel colours with integrated image slider and social buttons in footer.
 image: /assets/images/we_clearblue.jpg
 phpbb_versions: [3.3]
+categories: [phpbb]
 tags: [responsive, phpbb-style]
 repo: nextgen-solutions-gt/we_clearblue
 schema: design

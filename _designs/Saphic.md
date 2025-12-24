@@ -4,6 +4,7 @@ title: saphic
 description: A familiar style of soft and silver colors combined with bright green.
 image: /assets/images/Saphic.jpg
 phpbb_versions: [3.3]
+categories: [phpbb]
 tags: [responsive, phpbb-style]
 repo: nextgen-solutions-gt/saphic
 schema: design

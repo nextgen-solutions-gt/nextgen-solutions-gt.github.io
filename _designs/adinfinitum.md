@@ -4,6 +4,7 @@ title: adinfinitum
 description: Simple template in dark and red colours.
 image: /assets/images/adinfinitum.jpg
 phpbb_versions: [3.3]
+categories: [phpbb]
 tags: [dark, responsive, phpbb-style]
 repo: nextgen-solutions-gt/adinfinitum
 schema: design

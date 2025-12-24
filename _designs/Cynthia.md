@@ -4,6 +4,7 @@ title: Cynthia
 description: Black style with blue and red tones. 
 image: /assets/images/Cynthia.jpg
 phpbb_versions: [3.3]
+categories: [phpbb]
 tags: [dark, responsive, phpbb-style]
 repo: nextgen-solutions-gt/Cynthia
 schema: design
