@@ -1,20 +1,25 @@
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <ol>
+    <!-- Nivel Home -->
     <li><a href="{{ '/' | relative_url }}">Home</a></li>
 
-    {% comment %}
-      Si la página tiene categorías o tags, agregamos un nivel intermedio
-    {% endcomment %}
+    <!-- Nivel por categorías (si existen) -->
     {% if page.categories %}
       {% for category in page.categories %}
         <li><a href="{{ '/categories/' | append: category | relative_url }}">{{ category }}</a></li>
       {% endfor %}
     {% endif %}
 
-    {% if page.tags and page.layout == "design" %}
+    <!-- Nivel por layout -->
+    {% if page.layout == "design" %}
       <li><a href="{{ '/designs/' | relative_url }}">Designs</a></li>
+    {% elsif page.layout == "portfolio" %}
+      <li><a href="{{ '/portfolio/' | relative_url }}">Portfolio</a></li>
+    {% elsif page.layout == "blog" %}
+      <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
     {% endif %}
 
+    <!-- Página actual -->
     <li aria-current="page">{{ page.title }}</li>
   </ol>
 </nav>
