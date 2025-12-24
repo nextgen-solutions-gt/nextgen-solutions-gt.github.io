@@ -1135,3 +1135,16 @@ body.menu-open {
   text-decoration: none;
   color: inherit;
 }
+
+.last-update {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.last-update i {
+  font-size: 0.85rem;
+}

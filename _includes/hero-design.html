@@ -11,7 +11,10 @@
       <p class="hero-text">
         {{ page.description }}
       </p>
-
+	  <p class="last-update" data-repo="{{ page.repo }}">
+		<i class="fa-solid fa-clock"></i>
+		Last update: <span>Loading…</span>
+	  </p>
       <div class="design-actions">
         <!-- Construir URL completa de GitHub -->
         <a href="https://github.com/{{ page.repo }}" class="btn primary" target="_blank">

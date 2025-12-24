@@ -131,3 +131,31 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".last-update").forEach(el => {
+    const repo = el.dataset.repo;
+    const span = el.querySelector("span");
+
+    if (!repo || !span) return;
+
+    fetch(`https://api.github.com/repos/${repo}/commits?per_page=1`)
+      .then(r => r.json())
+      .then(data => {
+        if (!Array.isArray(data) || !data[0]) return;
+
+        const date = new Date(
+          data[0].commit.author.date
+        ).toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        });
+
+        span.textContent = date;
+      })
+      .catch(() => {
+        span.textContent = "Unavailable";
+      });
+  });
+});
