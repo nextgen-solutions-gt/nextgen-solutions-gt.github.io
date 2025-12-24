@@ -1060,50 +1060,79 @@ body.menu-open {
   text-decoration: underline;
 }
 
+/* ===== Commit Timeline ===== */
+
 .recent-commits {
   margin-top: 4rem;
 }
 
+.recent-commits h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Línea vertical */
 .commit-list {
   list-style: none;
-  margin: 2rem 0 0;
-  padding-left: 2rem;
+  margin: 0;
+  padding-left: 2.5rem;
   border-left: 2px solid var(--border);
 }
 
+/* Item */
 .commit-item {
   position: relative;
-  margin-bottom: 1.8rem;
+  padding-bottom: 2rem;
 }
 
+.commit-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Punto */
 .commit-dot {
   position: absolute;
-  left: -9px;
-  top: 6px;
-  width: 12px;
-  height: 12px;
-  background: var(--accent);
+  left: -11px;
+  top: 0.35rem;
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
   border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+/* Contenido */
 .commit-content {
-  padding-left: 1rem;
+  padding-left: 1.2rem;
 }
 
 .commit-msg {
+  display: inline-block;
   font-weight: 600;
   color: var(--text);
   text-decoration: none;
+  margin-bottom: 0.25rem;
 }
 
 .commit-msg:hover {
+  color: var(--primary);
   text-decoration: underline;
 }
 
+/* Meta */
 .commit-meta {
   font-size: 0.85rem;
   color: var(--muted);
-  margin-top: 0.2rem;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+/* Hover elegante */
+.commit-item:hover .commit-dot {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.25);
 }
 
 .last-update {
