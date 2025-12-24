@@ -5,7 +5,7 @@ description: Beatiful black and red style.
 image: /assets/images/revolution.jpg
 phpbb_versions: [3.3]
 tags: [responsive, phpbb-style]
-repo: https://github.com/nextgen-solutions-gt/revolution
+repo: nextgen-solutions-gt/revolution
 schema: design
 hero: design
 ---

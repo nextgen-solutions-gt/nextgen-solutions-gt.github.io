@@ -90,21 +90,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const commitSections = document.querySelectorAll(".recent-commits");
 
   commitSections.forEach(section => {
-    const repoUrl = section.id.replace("commits-", "");
-    if (!repoUrl) return;
+    const repo = section.dataset.repo; // usar data-attribute
+    if (!repo) return;
 
-    // Extraer usuario y repo desde la URL completa
-    let match = repoUrl.match(/https:\/\/github\.com\/(.+)\/(.+)/);
-    if (!match) return;
-    const user = match[1];
-    const repo = match[2];
-
-    fetch(`https://api.github.com/repos/${user}/${repo}/commits?per_page=3`)
+    fetch(`https://api.github.com/repos/${repo}/commits?per_page=3`)
       .then(res => res.json())
       .then(commits => {
         const grid = section.querySelector(".commits-grid");
-        if (!commits || commits.length === 0) {
-          grid.innerHTML = "<p>No commits yet.</p>";
+        if (!commits || commits.length === 0 || commits.message === "Not Found") {
+          grid.innerHTML = "<p>No commits found or repo is private.</p>";
           return;
         }
 
@@ -112,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const commitEl = document.createElement("div");
           commitEl.classList.add("commit-card");
 
-          const message = commit.commit.message.split("\n")[0]; // primer línea
+          const message = commit.commit.message.split("\n")[0];
           const date = new Date(commit.commit.author.date).toLocaleDateString();
           const url = commit.html_url;
 
