@@ -87,50 +87,71 @@ reveals.forEach(el => observer.observe(el));
 })();
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".recent-commits").forEach(section => {
-    const repo = section.dataset.repo;
-    const list = section.querySelector(".commit-list");
+  const container = document.querySelector(".recent-commits");
+  if (!container) return;
 
-    if (!repo || !list) return;
+  const repo = container.dataset.repo;
+  if (!repo) return;
 
-    fetch(`https://api.github.com/repos/${repo}/commits?per_page=5`)
-      .then(r => r.json())
-      .then(commits => {
-        if (!Array.isArray(commits)) {
-          list.innerHTML = "<li>No commits available</li>";
-          return;
-        }
+  const list = container.querySelector(".commit-list");
 
-        commits.forEach(c => {
-          const li = document.createElement("li");
-          li.className = "commit-item";
-          li.dataset.message = c.commit.message;
+  fetch(`https://api.github.com/repos/${repo}/commits?per_page=30`)
+    .then(res => res.json())
+    .then(commits => {
+      if (!Array.isArray(commits)) {
+        list.innerHTML = "<li>Unable to load commits.</li>";
+        return;
+      }
 
-          const date = new Date(c.commit.author.date)
-            .toLocaleDateString(undefined, {
-              year: "numeric",
-              month: "short",
-              day: "numeric"
-            });
+      list.innerHTML = "";
 
-          li.innerHTML = `
-            <a href="${c.html_url}" target="_blank" class="commit-main">
-              <span class="commit-sha">${c.sha.slice(0, 7)}</span>
-              <span class="commit-msg">
-                ${c.commit.message.split("\n")[0]}
-              </span>
+      commits.forEach(commit => {
+        const msg = commit.commit.message;
+        const short = msg.split("\n")[0];
+        const date = new Date(commit.commit.author.date);
+        const author = commit.commit.author.name;
+        const url = commit.html_url;
+
+        const li = document.createElement("li");
+        li.className = "commit-item";
+        li.title = msg;
+
+        li.innerHTML = `
+          <span class="commit-dot"></span>
+          <div class="commit-content">
+            <a href="${url}" target="_blank" class="commit-msg">
+              ${short}
             </a>
-            <span class="commit-date">${date}</span>
-          `;
+            <div class="commit-meta">
+              ${author} · ${timeAgo(date)}
+            </div>
+          </div>
+        `;
 
-          list.appendChild(li);
-        });
-      })
-      .catch(() => {
-        list.innerHTML = "<li>Error loading commits</li>";
+        list.appendChild(li);
       });
-  });
+    })
+    .catch(() => {
+      list.innerHTML = "<li>Error loading commits.</li>";
+    });
 });
+
+function timeAgo(date) {
+  const seconds = Math.floor((new Date() - date) / 1000);
+  const intervals = [
+    { label: "year", secs: 31536000 },
+    { label: "month", secs: 2592000 },
+    { label: "day", secs: 86400 },
+    { label: "hour", secs: 3600 },
+    { label: "minute", secs: 60 }
+  ];
+
+  for (const i of intervals) {
+    const count = Math.floor(seconds / i.secs);
+    if (count >= 1) return `${count} ${i.label}${count > 1 ? "s" : ""} ago`;
+  }
+  return "just now";
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".last-update").forEach(el => {
