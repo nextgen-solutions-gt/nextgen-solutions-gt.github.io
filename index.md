@@ -1,6 +1,7 @@
 ---
 layout: default
-title: nextgen solutions
+title: nextgen solutions | phpBB Services & Designs
+description: Installation, maintenance, custom work and professional phpBB designs.
 hero: home
 ---
 

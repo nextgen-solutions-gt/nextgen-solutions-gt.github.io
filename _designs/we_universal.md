@@ -4,7 +4,7 @@ title: we_universal
 description: we_universal is modern, clean style for phpBB 3.3.x. It uses principles of flat design and Responsive Web Design.
 image: /assets/images/we_universal.jpg
 phpbb_versions: [3.3]
-tags: [responsive, phpbb-style]
+tags: [dark, responsive, phpbb-style]
 repo: https://github.com/nextgen-solutions-gt/we_universal
 hero: design
 ---

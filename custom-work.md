@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Custom phpBB Work
-description: Tailored phpBB solutions built specifically for your community.
+title: Custom phpBB Development
+description: Tailored phpBB development, styles and performance optimization.
+image: /assets/images/custom-work-og.jpg
 permalink: /custom-work/
 ---
 

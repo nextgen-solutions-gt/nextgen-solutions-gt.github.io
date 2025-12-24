@@ -2,3 +2,11 @@ collections:
   designs:
     output: true
     permalink: /designs/:name/
+
+# Site identity
+title: nextgen solutions
+description: Professional phpBB services, custom development and premium designs.
+url: https://nextgen.gt
+
+# Social sharing
+social_image: /assets/images/og-default.png
