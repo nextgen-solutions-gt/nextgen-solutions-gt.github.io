@@ -1,7 +1,12 @@
 (() => {
   const toggle = document.querySelector(".nav-toggle");
   const menu = document.querySelector(".mobile-menu");
+
+  // 👉 Si no existe el menú móvil, salimos sin romper nada
+  if (!toggle || !menu) return;
+
   const icon = toggle.querySelector("i");
+  const links = menu.querySelectorAll("a");
 
   toggle.addEventListener("click", () => {
     const isOpen = menu.classList.toggle("open");
@@ -10,10 +15,10 @@
       ? "fa-solid fa-xmark"
       : "fa-solid fa-bars";
 
-    menu.setAttribute("aria-hidden", !isOpen);
+    menu.setAttribute("aria-hidden", String(!isOpen));
   });
 
-  menu.querySelectorAll("a").forEach(link => {
+  links.forEach(link => {
     link.addEventListener("click", () => {
       menu.classList.remove("open");
       icon.className = "fa-solid fa-bars";
