@@ -326,15 +326,24 @@ body.menu-open .site-header {
   left: 0;
   right: 0;
   background: var(--bg);
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  padding: 2rem;
-  border-top: 1px solid var(--border);
+  gap: 1.4rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 
-  transform: translateY(-120%);
-  transition: transform 0.3s ease;
+  transform: translateY(-20px);
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    transform 0.35s cubic-bezier(.25,.8,.25,1),
+    opacity 0.25s ease;
+
+  z-index: 999;
 }
+
 
 /* LINKS */
 .mobile-menu a {
@@ -347,6 +356,25 @@ body.menu-open .site-header {
 /* ABIERTO */
 .mobile-menu.open {
   transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu a {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.6rem 0;
+}
+
+body.menu-open {
+  overflow: hidden;
 }
 
 /* RESPONSIVE */
@@ -358,6 +386,16 @@ body.menu-open .site-header {
   .nav-toggle {
     display: block;
   }
+}
+
+.mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 998;
 }
 
 .hero {
