@@ -63,14 +63,10 @@ hero: home
         <h3>{{ design.title }}</h3>
 <div class="design-tags">
   {% for tag in design.tags %}
-    <button
-      class="tag"
-      type="button"
-      data-filter="{{ tag | slugify }}">
-      {{ tag }}
-    </button>
+    <span class="tag">{{ tag }}</span>
   {% endfor %}
 </div>
+		
         <p>{{ design.description }}</p>
 
         <a href="{{ design.url }}" class="btn">
