@@ -65,7 +65,9 @@ hero: home
         <h3>{{ design.title }}</h3>
 <div class="design-tags">
   {% for tag in design.tags %}
-    <span class="tag">{{ tag }}</span>
+    <span class="tag tag-{{ tag | slugify }}" aria-label="Tag {{ tag }}">
+      {{ tag }}
+    </span>
   {% endfor %}
 </div>
 		
