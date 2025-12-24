@@ -31,14 +31,6 @@ permalink: /custom-work/
 <section id="services" class="services container">
 
   <div class="card reveal">
-    <i class="fa-solid fa-code"></i>
-    <h3>Custom Extensions</h3>
-    <p>
-      Development of custom phpBB extensions tailored to your community’s workflow.
-    </p>
-  </div>
-
-  <div class="card reveal">
     <i class="fa-solid fa-palette"></i>
     <h3>Custom Styles</h3>
     <p>
