@@ -972,3 +972,57 @@ body.menu-open {
   font-size: 0.6rem;
   padding: 0.2rem 0.5rem;
 }
+
+.recent-commits {
+  margin-top: 2rem;
+}
+
+.recent-commits h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.commits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.commit-card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.commit-message {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.commit-date {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.commit-link {
+  font-size: 0.85rem;
+  color: var(--primary);
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.commit-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .commits-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -18,5 +18,10 @@ layout: default
   </ul>
 
   {{ content }}
-
+  
+  <!-- Contenedor para commits -->
+  <section class="recent-commits" id="commits-{{ page.repo | slugify }}">
+    <h3>Latest Commits</h3>
+    <div class="commits-grid"></div>
+  </section>
 </article>

@@ -85,3 +85,49 @@ reveals.forEach(el => observer.observe(el));
     });
   });
 })();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const commitSections = document.querySelectorAll(".recent-commits");
+
+  commitSections.forEach(section => {
+    const repoUrl = section.id.replace("commits-", "");
+    if (!repoUrl) return;
+
+    // Extraer usuario y repo desde la URL completa
+    let match = repoUrl.match(/https:\/\/github\.com\/(.+)\/(.+)/);
+    if (!match) return;
+    const user = match[1];
+    const repo = match[2];
+
+    fetch(`https://api.github.com/repos/${user}/${repo}/commits?per_page=3`)
+      .then(res => res.json())
+      .then(commits => {
+        const grid = section.querySelector(".commits-grid");
+        if (!commits || commits.length === 0) {
+          grid.innerHTML = "<p>No commits yet.</p>";
+          return;
+        }
+
+        commits.forEach(commit => {
+          const commitEl = document.createElement("div");
+          commitEl.classList.add("commit-card");
+
+          const message = commit.commit.message.split("\n")[0]; // primer línea
+          const date = new Date(commit.commit.author.date).toLocaleDateString();
+          const url = commit.html_url;
+
+          commitEl.innerHTML = `
+            <p class="commit-message">${message}</p>
+            <p class="commit-date">${date}</p>
+            <a href="${url}" target="_blank" class="commit-link">View on GitHub</a>
+          `;
+
+          grid.appendChild(commitEl);
+        });
+      })
+      .catch(err => {
+        section.querySelector(".commits-grid").innerHTML = "<p>Could not load commits.</p>";
+        console.error(err);
+      });
+  });
+});
