@@ -8,21 +8,27 @@
   const icon = toggle.querySelector("i");
   const links = menu.querySelectorAll("a");
 
-  toggle.addEventListener("click", () => {
-    const isOpen = menu.classList.toggle("open");
+toggle.addEventListener("click", () => {
+  const isOpen = menu.classList.toggle("open");
 
-    icon.className = isOpen
-      ? "fa-solid fa-xmark"
-      : "fa-solid fa-bars";
+  document.body.classList.toggle("menu-open", isOpen);
+  toggle.setAttribute("aria-expanded", String(isOpen));
 
-    menu.setAttribute("aria-hidden", String(!isOpen));
+  icon.className = isOpen
+    ? "fa-solid fa-xmark"
+    : "fa-solid fa-bars";
+
+  menu.setAttribute("aria-hidden", String(!isOpen));
+});
+
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("open");
+    document.body.classList.remove("menu-open");
+    toggle.setAttribute("aria-expanded", "false");
+    icon.className = "fa-solid fa-bars";
+    menu.setAttribute("aria-hidden", "true");
   });
+});
 
-  links.forEach(link => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("open");
-      icon.className = "fa-solid fa-bars";
-      menu.setAttribute("aria-hidden", "true");
-    });
-  });
 })();
