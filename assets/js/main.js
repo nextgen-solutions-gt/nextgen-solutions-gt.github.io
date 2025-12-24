@@ -125,3 +125,36 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const commitSections = document.querySelectorAll(".recent-commits");
+
+  commitSections.forEach(section => {
+    const repo = section.dataset.repo; // e.g., "nextgen-solutions-gt/we_universal"
+    const commitList = section.querySelector(".commit-list");
+
+    if (!repo) return;
+
+    fetch(`https://api.github.com/repos/${repo}/commits?per_page=5`)
+      .then(res => res.json())
+      .then(commits => {
+        if (!Array.isArray(commits)) return;
+        commits.forEach(commit => {
+          const li = document.createElement("li");
+          li.className = "commit-item";
+          li.dataset.message = commit.commit.message; // mensaje completo
+
+          li.innerHTML = `
+            <span class="commit-sha">${commit.sha.slice(0,7)}</span> - 
+            <span class="commit-msg">${commit.commit.message.slice(0,50)}${commit.commit.message.length>50?'…':''}</span>
+          `;
+          
+          commitList.appendChild(li);
+        });
+      })
+      .catch(err => {
+        console.error("Error loading commits:", err);
+        commitList.innerHTML = "<li>No commits found</li>";
+      });
+  });
+});

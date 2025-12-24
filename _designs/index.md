@@ -1,5 +1,5 @@
 ---
 layout: portfolio
-title: Designs
+title: designs
 permalink: /designs/
 ---

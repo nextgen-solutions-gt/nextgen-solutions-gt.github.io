@@ -1059,3 +1059,44 @@ body.menu-open {
 .breadcrumbs a:hover {
   text-decoration: underline;
 }
+
+.commit-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.commit-item {
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.25rem;
+  background: var(--card);
+  border-radius: 8px;
+  cursor: default;
+  position: relative;
+  display: inline-block;
+}
+
+.commit-item span {
+  font-family: monospace;
+}
+
+.commit-item::after {
+  content: attr(data-message);
+  position: absolute;
+  left: 0;
+  top: 110%;
+  background: var(--text);
+  color: var(--bg);
+  padding: 0.5rem;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  min-width: 200px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.commit-item:hover::after {
+  opacity: 1;
+}
