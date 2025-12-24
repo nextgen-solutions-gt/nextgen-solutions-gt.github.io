@@ -3,6 +3,7 @@ layout: default
 title: nextgen solutions
 seo_title: phpBB Services & Premium Designs
 description: Professional phpBB services, custom development and premium designs.
+schema: home
 hero: home
 ---
 

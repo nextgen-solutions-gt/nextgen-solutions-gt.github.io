@@ -6,6 +6,7 @@ image: /assets/images/proglass.jpg
 phpbb_versions: [3.3]
 tags: [responsive, phpbb-style]
 repo: https://github.com/nextgen-solutions-gt/proglass
+schema: design
 hero: design
 ---
 

@@ -4,6 +4,7 @@ title: Custom phpBB Development
 description: Tailored phpBB development, styles and performance optimization.
 image: /assets/images/custom-work-og.jpg
 permalink: /custom-work/
+schema: service
 ---
 
 <section class="custom-hero">

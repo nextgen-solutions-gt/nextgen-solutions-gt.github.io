@@ -6,6 +6,7 @@ image: /assets/images/we_universal.jpg
 phpbb_versions: [3.3]
 tags: [dark, responsive, phpbb-style]
 repo: https://github.com/nextgen-solutions-gt/we_universal
+schema: design
 hero: design
 ---
 

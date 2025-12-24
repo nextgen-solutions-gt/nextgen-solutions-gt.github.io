@@ -7,6 +7,19 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/style.css?v={{ site.github.build_revision }}">
+{% include schema-site.html %}
+
+{% if page.schema == "home" %}
+  {% include schema-home.html %}
+{% endif %}
+
+{% if page.schema == "design" %}
+  {% include schema-design.html %}
+{% endif %}
+
+{% if page.schema == "service" %}
+  {% include schema-service.html %}
+{% endif %}
 </head>
 <body>
 <header class="site-header">
