@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<main class="category container">
+
+  {% include breadcrumbs.html %}
+
+  <h1 class="section-title">{{ page.title }}{% if page.category %} ({{ page.category }}){% endif %}</h1>
+
+  <div class="item-grid">
+    {% assign items = "" | split: "" %}
+
+    {% comment %}
+      Filtrar diseños
+    {% endcomment %}
+    {% assign filtered_designs = site.data.designs | where_exp:"item","item.categories contains page.category" %}
+    {% assign items = items | concat: filtered_designs %}
+
+    {% comment %}
+      Filtrar portfolio si tienes otro _data/portfolio.yml
+    {% endcomment %}
+    {% if site.data.portfolio %}
+      {% assign filtered_portfolio = site.data.portfolio | where_exp:"item","item.categories contains page.category" %}
+      {% assign items = items | concat: filtered_portfolio %}
+    {% endif %}
+
+    {% comment %}
+      Filtrar posts de blog
+    {% endcomment %}
+    {% assign filtered_posts = site.posts | where_exp:"post","post.categories contains page.category" %}
+    {% assign items = items | concat: filtered_posts %}
+
+    {% if items.size > 0 %}
+      {% for item in items %}
+        <article class="item-card reveal">
+          {% if item.image %}
+            <img src="{{ item.image }}" alt="{{ item.name | default: item.title }}">
+          {% endif %}
+          <h3>{{ item.name | default: item.title }}</h3>
+          <p>{{ item.description | default: item.excerpt }}</p>
+          {% if item.repo %}
+            <a href="https://github.com/{{ item.repo }}" class="btn" target="_blank">View Repository</a>
+          {% endif %}
+          {% if item.url %}
+            <a href="{{ item.url }}" class="btn">View Item</a>
+          {% endif %}
+        </article>
+      {% endfor %}
+    {% else %}
+      <p>No items found for this category.</p>
+    {% endif %}
+  </div>
+
+</main>
