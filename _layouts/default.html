@@ -25,24 +25,21 @@
 <header class="site-header">
   <nav class="nav container" aria-label="Main navigation">
 
-    <!-- Logo / Brand -->
-    <a href="/" class="nav-logo">
-      nextgen solutions
-    </a>
+    <!-- Brand / Logo -->
+    <a href="/" class="nav-brand">nextgen solutions</a>
 
-    <!-- Desktop links -->
+    <!-- Desktop Navigation -->
     <ul class="nav-links">
       <li><a href="/#services">Services</a></li>
       <li><a href="/#designs">Designs</a></li>
       <li><a href="/#portfolio">Portfolio</a></li>
-      <li><a href="/#contact">Contact</a></li>
-      <li><a href="/custom-work/" class="btn nav-cta">Custom Work</a></li>
+      <li><a href="/#contact" class="nav-cta">Contact</a></li>
     </ul>
 
     <!-- Mobile toggle -->
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
       <i class="fa-solid fa-bars"></i>
-    </button>
+    </button>  
 <div class="theme-switch" role="group" aria-label="Theme selector">
   <button data-theme-select="system" aria-label="Sistema">
     <i class="fa-solid fa-desktop"></i>
@@ -58,18 +55,6 @@
 	</div>
   </nav>
 </header>
-<!-- Mobile overlay + panel -->
-<div class="mobile-overlay"></div>
-
-<nav class="mobile-nav">
-  <ul>
-    <li><a href="/#services">Services</a></li>
-    <li><a href="/#designs">Designs</a></li>
-    <li><a href="/#portfolio">Portfolio</a></li>
-    <li><a href="/#contact">Contact</a></li>
-    <li><a href="/custom-work/" class="btn mobile-cta">Custom Work</a></li>
-  </ul>
-</nav>
 {% if page.hero == "design" %}
   {% include hero-design.html %}
 {% elsif page.hero == "home" %}
