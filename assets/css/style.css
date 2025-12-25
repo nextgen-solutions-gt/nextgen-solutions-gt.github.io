@@ -1182,3 +1182,56 @@ body.menu-open {
 .last-update i {
   font-size: 0.85rem;
 }
+
+/* Blog */
+.blog-list {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.blog-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.blog-card a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.blog-card a:hover {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+.blog-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Post */
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-title {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.post-description {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  color: var(--text-soft);
+}
+
+.post-content {
+  margin-top: 2.5rem;
+  line-height: 1.7;
+}
