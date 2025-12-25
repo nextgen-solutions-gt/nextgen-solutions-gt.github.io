@@ -222,9 +222,6 @@ h1 {
   text-decoration: none;
 }
 
-/* ===============================
-   HEADER (full width)
-================================ */
 .site-header {
   position: fixed;
   top: 0;
@@ -240,7 +237,7 @@ h1 {
     box-shadow 0.3s ease;
 }
 
-/* Estado con scroll */
+/* 🟦 Estado con scroll (desktop + mobile cerrado) */
 .site-header.scrolled {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
@@ -253,7 +250,7 @@ h1 {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* Menú móvil abierto */
+/* 🛑 CLAVE: cuando el menú móvil está abierto */
 body.menu-open .site-header {
   background: var(--bg) !important;
   backdrop-filter: none !important;
@@ -261,23 +258,14 @@ body.menu-open .site-header {
   box-shadow: none !important;
 }
 
-/* ===============================
-   NAV (contenido centrado)
-================================ */
+
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   height: 64px;
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 1100px;
   padding: 0 1rem;
-}
-
-/* Marca protegida */
-.brand {
-  flex-shrink: 0;
 }
 
 .brand a {
@@ -286,17 +274,10 @@ body.menu-open .site-header {
   color: var(--text);
 }
 
-/* ===============================
-   LINKS
-================================ */
 .nav-links {
   display: flex;
-  gap: 1.5rem;           /* 🔥 antes 6.5rem */
+  gap: 6.5rem;
   list-style: none;
-
-  flex: 1;
-  justify-content: center;
-  white-space: nowrap;
 }
 
 .nav-links a {
@@ -322,22 +303,9 @@ body.menu-open .site-header {
   width: 100%;
 }
 
-/* ===============================
-   ACTIONS
-================================ */
 .nav-actions {
   display: flex;
   gap: 0.6rem;
-  flex-shrink: 0;
-}
-
-/* ===============================
-   DESKTOP LIMPIO (opcional)
-================================ */
-@media (max-width: 1100px) {
-  .nav-links li:nth-child(n+7) {
-    display: none;
-  }
 }
 
 /* BOTÓN MOBILE */
