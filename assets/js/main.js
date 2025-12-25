@@ -87,73 +87,6 @@ reveals.forEach(el => observer.observe(el));
 })();
 
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".recent-commits");
-  if (!container) return;
-
-  const repo = container.dataset.repo;
-  if (!repo) return;
-
-  const list = container.querySelector(".commit-list");
-
-  fetch(`https://api.github.com/repos/${repo}/commits?per_page=30`)
-    .then(res => res.json())
-    .then(commits => {
-      if (!Array.isArray(commits)) {
-        list.innerHTML = "<li>Unable to load commits.</li>";
-        return;
-      }
-
-      list.innerHTML = "";
-
-      commits.forEach(commit => {
-        const msg = commit.commit.message;
-        const short = msg.split("\n")[0];
-        const date = new Date(commit.commit.author.date);
-        const author = commit.commit.author.name;
-        const url = commit.html_url;
-
-        const li = document.createElement("li");
-        li.className = "commit-item";
-        li.title = msg;
-
-        li.innerHTML = `
-          <span class="commit-dot"></span>
-          <div class="commit-content">
-            <a href="${url}" target="_blank" class="commit-msg">
-              ${short}
-            </a>
-            <div class="commit-meta">
-              ${author} · ${timeAgo(date)}
-            </div>
-          </div>
-        `;
-
-        list.appendChild(li);
-      });
-    })
-    .catch(() => {
-      list.innerHTML = "<li>Error loading commits.</li>";
-    });
-});
-
-function timeAgo(date) {
-  const seconds = Math.floor((new Date() - date) / 1000);
-  const intervals = [
-    { label: "year", secs: 31536000 },
-    { label: "month", secs: 2592000 },
-    { label: "day", secs: 86400 },
-    { label: "hour", secs: 3600 },
-    { label: "minute", secs: 60 }
-  ];
-
-  for (const i of intervals) {
-    const count = Math.floor(seconds / i.secs);
-    if (count >= 1) return `${count} ${i.label}${count > 1 ? "s" : ""} ago`;
-  }
-  return "just now";
-}
-
-document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".last-update").forEach(el => {
     const repo = el.dataset.repo;
     const span = el.querySelector("span");
@@ -180,3 +113,80 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const block = document.querySelector(".recent-commits");
+  if (!block) return;
+
+  const repo = block.dataset.repo;
+  const list = block.querySelector(".commit-list");
+  const toggle = block.querySelector(".commit-toggle");
+
+  const LIMIT = 5;
+  let expanded = false;
+  let allCommits = [];
+
+  fetch(`https://api.github.com/repos/${repo}/commits?per_page=30`)
+    .then(r => r.json())
+    .then(commits => {
+      if (!Array.isArray(commits)) return;
+
+      allCommits = commits;
+      render();
+
+      if (commits.length > LIMIT) {
+        toggle.hidden = false;
+      }
+    });
+
+  toggle.addEventListener("click", () => {
+    expanded = !expanded;
+    toggle.textContent = expanded ? "Show less" : "Show more";
+    render();
+  });
+
+  function render() {
+    list.innerHTML = "";
+
+    const visible = expanded
+      ? allCommits
+      : allCommits.slice(0, LIMIT);
+
+    visible.forEach(commit => {
+      const msg = commit.commit.message;
+      const short = msg.split("\n")[0];
+      const date = new Date(commit.commit.author.date);
+      const author = commit.commit.author.name;
+
+      const li = document.createElement("li");
+      li.className = "commit-item";
+      li.title = msg;
+
+      li.innerHTML = `
+        <span class="commit-dot"></span>
+        <div class="commit-label">
+          <strong>${short}</strong>
+          <span>${author} · ${timeAgo(date)}</span>
+        </div>
+      `;
+
+      list.appendChild(li);
+    });
+  }
+});
+
+function timeAgo(date) {
+  const s = Math.floor((Date.now() - date) / 1000);
+  const units = [
+    ["year", 31536000],
+    ["month", 2592000],
+    ["day", 86400],
+    ["hour", 3600]
+  ];
+
+  for (const [name, secs] of units) {
+    const v = Math.floor(s / secs);
+    if (v >= 1) return `${v} ${name}${v > 1 ? "s" : ""} ago`;
+  }
+  return "just now";
+}

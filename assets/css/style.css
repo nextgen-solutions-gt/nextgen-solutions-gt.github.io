@@ -1060,80 +1060,74 @@ body.menu-open {
   text-decoration: underline;
 }
 
-/* ===== Commit Timeline ===== */
-
-.recent-commits {
-  margin-top: 4rem;
+/* Wrapper */
+.commit-timeline-wrapper {
+  overflow-x: auto;
+  padding-bottom: 1rem;
 }
 
-.recent-commits h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Línea vertical */
+/* Timeline */
 .commit-list {
+  display: flex;
+  gap: 2.5rem;
   list-style: none;
+  padding: 2rem 1rem 0;
   margin: 0;
-  padding-left: 2.5rem;
-  border-left: 2px solid var(--border);
+  position: relative;
+}
+
+/* Línea horizontal */
+.commit-list::before {
+  content: "";
+  position: absolute;
+  top: 2.2rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--border);
 }
 
 /* Item */
 .commit-item {
   position: relative;
-  padding-bottom: 2rem;
-}
-
-.commit-item:last-child {
-  padding-bottom: 0;
+  min-width: 200px;
+  text-align: center;
 }
 
 /* Punto */
 .commit-dot {
-  position: absolute;
-  left: -11px;
-  top: 0.35rem;
   width: 14px;
   height: 14px;
   background: var(--primary);
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin: 0 auto 1rem;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
-/* Contenido */
-.commit-content {
-  padding-left: 1.2rem;
+/* Texto */
+.commit-label strong {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.3;
 }
 
-.commit-msg {
-  display: inline-block;
-  font-weight: 600;
-  color: var(--text);
-  text-decoration: none;
-  margin-bottom: 0.25rem;
-}
-
-.commit-msg:hover {
-  color: var(--primary);
-  text-decoration: underline;
-}
-
-/* Meta */
-.commit-meta {
-  font-size: 0.85rem;
+.commit-label span {
+  font-size: 0.8rem;
   color: var(--muted);
-  display: flex;
-  gap: 0.4rem;
-  align-items: center;
 }
 
-/* Hover elegante */
+/* Hover */
 .commit-item:hover .commit-dot {
-  transform: scale(1.1);
-  box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.3);
 }
+
+/* Botón */
+.commit-toggle {
+  margin-top: 1.5rem;
+}
+
 
 .last-update {
   margin-top: 0.75rem;
