@@ -296,11 +296,10 @@ body.menu-open .site-header {
 
 @media (max-width: 900px) {
   /* ocultar menú desktop */
-  .nav {
+  .nav-links {
     display: none;
   }
 
-  /* mostrar botón hamburguesa */
   .nav-toggle {
     display: inline-flex;
   }
@@ -386,17 +385,6 @@ body.menu-open .site-header {
 
 body.menu-open {
   overflow: hidden;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none; /* desktop off */
-  }
-
-  .nav-toggle {
-    display: block;
-  }
 }
 
 .mobile-backdrop {
