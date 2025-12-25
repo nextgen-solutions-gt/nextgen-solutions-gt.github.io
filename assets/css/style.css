@@ -1249,3 +1249,11 @@ body.menu-open {
   color: var(--muted);
   margin-bottom: 1rem;
 }
+
+.giscus-frame::after {
+  content: "Comment posted — refresh to see it";
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
