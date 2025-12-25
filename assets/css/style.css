@@ -1060,74 +1060,76 @@ body.menu-open {
   text-decoration: underline;
 }
 
-/* Wrapper */
-.commit-timeline-wrapper {
-  overflow-x: auto;
-  padding-bottom: 1rem;
-}
-
-/* Timeline */
+/* Timeline container */
 .commit-list {
-  display: flex;
-  gap: 2.5rem;
   list-style: none;
-  padding: 2rem 1rem 0;
-  margin: 0;
-  position: relative;
-}
-
-/* Línea horizontal */
-.commit-list::before {
-  content: "";
-  position: absolute;
-  top: 2.2rem;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--border);
+  margin: 2rem 0 0;
+  padding-left: 2.5rem;
+  border-left: 2px solid var(--border);
 }
 
 /* Item */
 .commit-item {
   position: relative;
-  min-width: 200px;
-  text-align: center;
+  padding: 0 0 2.5rem 0;
+  display: flex;
+  gap: 1.2rem;
 }
 
-/* Punto */
+.commit-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Dot */
 .commit-dot {
-  width: 14px;
-  height: 14px;
+  position: absolute;
+  left: -10px;
+  top: 0.4rem;
+  width: 12px;
+  height: 12px;
   background: var(--primary);
   border-radius: 50%;
-  margin: 0 auto 1rem;
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
-  position: relative;
-  z-index: 1;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
 }
 
-/* Texto */
-.commit-label strong {
+/* Content */
+.commit-content {
+  padding-left: 1.2rem;
+  max-width: 700px;
+}
+
+.commit-content strong {
+  font-size: 0.95rem;
   display: block;
-  font-size: 0.9rem;
-  line-height: 1.3;
+  margin-bottom: 0.25rem;
 }
 
-.commit-label span {
-  font-size: 0.8rem;
+.commit-meta {
+  font-size: 0.85rem;
   color: var(--muted);
 }
 
-/* Hover */
-.commit-item:hover .commit-dot {
-  box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.3);
+/* Subtle separator */
+.commit-item::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  bottom: 1.25rem;
+  width: 6px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 50%;
 }
 
-/* Botón */
+/* Button */
 .commit-toggle {
   margin-top: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
 }
-
 
 .last-update {
   margin-top: 0.75rem;

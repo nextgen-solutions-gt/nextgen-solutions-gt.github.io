@@ -120,23 +120,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const repo = block.dataset.repo;
   const list = block.querySelector(".commit-list");
-  const toggle = block.querySelector(".commit-toggle");
 
   const LIMIT = 5;
   let expanded = false;
-  let allCommits = [];
+  let all = [];
+
+  const toggle = document.createElement("button");
+  toggle.className = "commit-toggle";
+  toggle.textContent = "Show more";
+  toggle.hidden = true;
+  block.appendChild(toggle);
 
   fetch(`https://api.github.com/repos/${repo}/commits?per_page=30`)
     .then(r => r.json())
     .then(commits => {
       if (!Array.isArray(commits)) return;
-
-      allCommits = commits;
+      all = commits;
       render();
-
-      if (commits.length > LIMIT) {
-        toggle.hidden = false;
-      }
+      if (commits.length > LIMIT) toggle.hidden = false;
     });
 
   toggle.addEventListener("click", () => {
@@ -147,46 +148,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function render() {
     list.innerHTML = "";
+    const visible = expanded ? all : all.slice(0, LIMIT);
 
-    const visible = expanded
-      ? allCommits
-      : allCommits.slice(0, LIMIT);
-
-    visible.forEach(commit => {
-      const msg = commit.commit.message;
-      const short = msg.split("\n")[0];
-      const date = new Date(commit.commit.author.date);
-      const author = commit.commit.author.name;
-
+    visible.forEach(c => {
       const li = document.createElement("li");
       li.className = "commit-item";
-      li.title = msg;
-
       li.innerHTML = `
         <span class="commit-dot"></span>
-        <div class="commit-label">
-          <strong>${short}</strong>
-          <span>${author} · ${timeAgo(date)}</span>
+        <div class="commit-content">
+          <strong>${c.commit.message.split("\n")[0]}</strong>
+          <div class="commit-meta">
+            ${c.commit.author.name} · ${timeAgo(new Date(c.commit.author.date))}
+          </div>
         </div>
       `;
-
       list.appendChild(li);
     });
   }
 });
-
-function timeAgo(date) {
-  const s = Math.floor((Date.now() - date) / 1000);
-  const units = [
-    ["year", 31536000],
-    ["month", 2592000],
-    ["day", 86400],
-    ["hour", 3600]
-  ];
-
-  for (const [name, secs] of units) {
-    const v = Math.floor(s / secs);
-    if (v >= 1) return `${v} ${name}${v > 1 ? "s" : ""} ago`;
-  }
-  return "just now";
-}
