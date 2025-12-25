@@ -23,47 +23,42 @@
 </head>
 <body>
 <header class="site-header">
-  <nav class="nav container">
+  <div class="header-inner container">
     <div class="brand">
       <h1><a href="/">nextgen solutions</a></h1>
     </div>
 
-    <ul class="nav-links">
-      <li><a href="/#services">Services</a></li>
-      <li><a href="/#designs">phpBB Designs</a></li>
-      <li><a href="/#portfolio">Portfolio</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/#contact">Contact</a></li>
-    </ul>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#designs">phpBB Designs</a></li>
+        <li><a href="/#portfolio">Portfolio</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
 
     <div class="nav-actions">
-      <!-- Tema -->
-	  <button class="nav-toggle"
-        aria-label="Abrir menú"
-        aria-expanded="false">
-		<i class="fa-solid fa-bars"></i>
-	  </button>	  
-	<div class="theme-switch" role="group" aria-label="Theme selector">
-		<button data-theme-select="system" aria-label="Sistema">
-			<i class="fa-solid fa-desktop"></i>
-		</button>
-		<button data-theme-select="light" aria-label="Claro">
-			<i class="fa-solid fa-sun"></i>
-		</button>
-		<button data-theme-select="dark" aria-label="Oscuro">
-			<i class="fa-solid fa-moon"></i>
-		</button>
-	</div>
-	</div>
-  </nav>
-<div class="mobile-menu" aria-hidden="true">
-  <a href="/#services">Services</a>
-  <a href="/#designs">phpBB Designs</a>
-  <a href="/#portfolio">Portfolio</a>
-  <a href="/#contact">Contact</a>
-</div>
-<div class="mobile-backdrop" aria-hidden="true"></div>
-  
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="theme-switch" role="group" aria-label="Theme selector">
+        <button data-theme-select="system"><i class="fa-solid fa-desktop"></i></button>
+        <button data-theme-select="light"><i class="fa-solid fa-sun"></i></button>
+        <button data-theme-select="dark"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="/#services">Services</a>
+    <a href="/#designs">phpBB Designs</a>
+    <a href="/#portfolio">Portfolio</a>
+    <a href="/#contact">Contact</a>
+  </div>
+
+  <div class="mobile-backdrop" aria-hidden="true"></div>
 </header>
 {% if page.hero == "design" %}
   {% include hero-design.html %}
