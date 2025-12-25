@@ -162,15 +162,29 @@ document.addEventListener("DOMContentLoaded", () => {
       visible.forEach(c => {
         const li = document.createElement("li");
         li.className = "commit-item";
-        li.innerHTML = `
-          <span class="commit-dot"></span>
-          <div class="commit-content">
-            <strong>${c.commit.message.split("\n")[0]}</strong>
-            <div class="commit-meta">
-              ${c.commit.author.name} · ${timeAgo(new Date(c.commit.author.date))}
-            </div>
-          </div>
-        `;
+const short = c.commit.message.split("\n")[0];
+const full = c.commit.message.replace(/"/g, "&quot;");
+
+li.innerHTML = `
+  <span class="commit-dot"></span>
+
+  <div class="commit-content">
+    <a
+      href="${c.html_url}"
+      class="commit-link"
+      target="_blank"
+      rel="noopener"
+      title="${full}"
+    >
+      ${short}
+    </a>
+
+    <div class="commit-meta">
+      ${c.commit.author.name} · ${timeAgo(new Date(c.commit.author.date))}
+    </div>
+  </div>
+`;
+
         list.appendChild(li);
       });
     }

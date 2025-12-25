@@ -1131,6 +1131,45 @@ body.menu-open {
   cursor: pointer;
 }
 
+/* Commit link */
+.commit-link {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.15s ease;
+}
+
+.commit-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* Tooltip hint cursor */
+.commit-link[title] {
+  cursor: help;
+}
+
+/* Better spacing */
+.commit-item {
+  padding-bottom: 2.25rem;
+}
+
+/* Visual hierarchy */
+.commit-meta {
+  margin-top: 0.2rem;
+}
+
+/* Optional subtle hover */
+.commit-item:hover .commit-dot {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.2);
+  transition: 0.2s ease;
+}
+
+
 .last-update {
   margin-top: 0.75rem;
   font-size: 0.9rem;
