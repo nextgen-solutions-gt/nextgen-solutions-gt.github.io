@@ -39,6 +39,13 @@ html {
   scroll-padding-top: 80px;
 }
 
+html.theme-animate * {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;

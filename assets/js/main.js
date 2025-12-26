@@ -1,7 +1,14 @@
 const buttons = document.querySelectorAll("[data-theme-select]");
 const root = document.documentElement;
 
-function applyTheme(mode) {
+function applyTheme(mode, animate = false) {
+  if (animate) {
+    root.classList.add("theme-animate");
+    setTimeout(() => {
+      root.classList.remove("theme-animate");
+    }, 300);
+  }
+
   localStorage.setItem("theme", mode);
 
   let theme = mode;
@@ -21,14 +28,14 @@ function applyTheme(mode) {
   });
 }
 
-// inicial (ya NO causa parpadeo)
+// inicial (sin animación)
 const saved = localStorage.getItem("theme") || "system";
 applyTheme(saved);
 
-// clicks
+// clicks (con animación)
 buttons.forEach(btn => {
   btn.addEventListener("click", () => {
-    applyTheme(btn.dataset.themeSelect);
+    applyTheme(btn.dataset.themeSelect, true);
   });
 });
 
