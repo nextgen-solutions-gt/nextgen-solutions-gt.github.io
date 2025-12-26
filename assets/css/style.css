@@ -314,7 +314,7 @@ body.menu-open .site-header {
 /* MENÚ MOBILE */
 .mobile-menu {
   position: fixed;
-  top: 64px;
+  top: 58px;
   left: 0;
   right: 0;
   background: var(--bg);

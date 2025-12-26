@@ -1,7 +1,24 @@
 <!doctype html>
-<html lang="en" data-theme="light|dark">
+<html lang="en">
 <head>
   <meta charset="utf-8">
+<script>
+(function () {
+  try {
+    const saved = localStorage.getItem("theme") || "system";
+    let theme = saved;
+
+    if (saved === "system") {
+      theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+
+    document.documentElement.setAttribute("data-theme", theme);
+  } catch (e) {}
+})();
+</script>
+  
   {% include seo.html %}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -38,7 +55,6 @@
         <li><a href="/#services">Services</a></li>
         <li><a href="/#designs">phpBB Designs</a></li>
         <li><a href="/#portfolio">Portfolio</a></li>
-        <li><a href="/blog/">Blog</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>

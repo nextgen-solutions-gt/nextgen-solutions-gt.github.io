@@ -21,7 +21,7 @@ function applyTheme(mode) {
   });
 }
 
-// inicial
+// inicial (ya NO causa parpadeo)
 const saved = localStorage.getItem("theme") || "system";
 applyTheme(saved);
 
@@ -32,7 +32,7 @@ buttons.forEach(btn => {
   });
 });
 
-// escuchar cambios del sistema
+// cambios del sistema
 window
   .matchMedia("(prefers-color-scheme: dark)")
   .addEventListener("change", () => {
