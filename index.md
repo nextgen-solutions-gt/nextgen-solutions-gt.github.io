@@ -112,6 +112,60 @@ hero: home
   </div>
 </section>
 
+{% assign testimonials_shuffled = site.data.testimonials | shuffle %}
+{% assign featured_testimonials = testimonials_shuffled | slice: 0, 3 %}
+<section id="testimonials" class="testimonials container">
+  <div class="section-head">
+    <h2 class="section-title">What clients say</h2>
+    <p class="section-subtitle">
+      Real feedback from forum owners and communities
+    </p>
+  </div>
+
+  <div class="testimonial-slider">
+    {% for t in featured_testimonials %}
+      <article class="testimonial">
+        <p class="testimonial-text">
+          “{{ t.text }}”
+        </p>
+
+        {% if t.rating %}
+          <div class="testimonial-rating" aria-label="Rating {{ t.rating }} out of 5">
+            <span class="stars">
+              {% for i in (1..t.rating) %}
+                <span aria-hidden="true">★</span>
+              {% endfor %}
+            </span>
+            <span class="rating-value">
+              {{ t.rating }}.0 / 5
+            </span>
+          </div>
+        {% endif %}
+
+        <div class="testimonial-meta">
+          <strong class="testimonial-name">{{ t.name }}</strong>
+          <span class="testimonial-role">
+            {{ t.role }} · {{ t.platform }}
+          </span>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+  <!-- Controls -->
+  <div class="testimonial-controls">
+    <button id="prev-testimonial" class="testimonial-btn" aria-label="Previous testimonial">‹</button>
+    <button id="next-testimonial" class="testimonial-btn" aria-label="Next testimonial">›</button>
+  </div>
+
+  <div class="testimonials-link">
+    <a href="/testimonials/" class="btn small">
+      View all client testimonials
+    </a>
+  </div>
+</section>
+
+
 
 <section id="contact" class="contact container">
   <h2 class="section-title">Contact Me</h2>

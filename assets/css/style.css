@@ -912,7 +912,7 @@ body.menu-open {
 .tag {
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
-  font-size: 0.7rem;
+  font-size: 0.5rem;
   font-weight: 600;
   line-height: 1;
   white-space: nowrap;
@@ -1263,4 +1263,252 @@ body.menu-open {
   font-size: 0.8rem;
   color: var(--muted);
   margin-top: 0.5rem;
+}
+
+/* Testimonials */
+/* ======================================================
+   HERO DE TESTIMONIOS (MISMO ESTILO QUE HOME)
+====================================================== */
+
+.hero-testimonials {
+  background:
+    radial-gradient(
+      500px circle at 20% 20%,
+      rgba(37, 99, 235, 0.12),
+      transparent 70%
+    ),
+    radial-gradient(
+      600px circle at 80% 80%,
+      rgba(96, 165, 250, 0.12),
+      transparent 70%
+    );
+}
+
+.hero-testimonials .hero-inner {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero-testimonials .hero-title {
+  color: var(--text);
+}
+
+.hero-testimonials .hero-subtitle {
+  color: var(--muted);
+}
+
+/* ======================================================
+   HERO BADGE
+====================================================== */
+
+.hero-badge {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  border-radius: 999px;
+}
+
+/* ======================================================
+   TESTIMONIAL BASE (CARD)
+====================================================== */
+
+.testimonial {
+  padding: 32px;
+  background: var(--card);
+  color: var(--text);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+
+  /* 🔑 SIMETRÍA */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* ======================================================
+   TEXTO
+====================================================== */
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-height: 8.5em;
+  overflow: hidden;
+}
+
+/* ======================================================
+   FOOTER (rating + meta SIEMPRE ABAJO)
+====================================================== */
+
+.testimonial-footer {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+/* ======================================================
+   META
+====================================================== */
+
+.testimonial-meta {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.testimonial-name {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ======================================================
+   RATING
+====================================================== */
+
+.testimonial-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+}
+
+.testimonial-rating .stars {
+  color: #facc15;
+  letter-spacing: 3px;
+}
+
+.testimonial-rating .rating-value {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ======================================================
+   HERO – TESTIMONIO DESTACADO
+====================================================== */
+
+.hero-testimonials .testimonial.featured {
+  margin-top: 48px;
+  max-width: 900px;
+  padding: 48px;
+  text-align: center;
+}
+
+/* ======================================================
+   GRID DE TESTIMONIOS (PÁGINA)
+====================================================== */
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* ======================================================
+   SLIDER (HOME)
+====================================================== */
+
+.testimonial-slider .testimonial {
+  display: none;
+}
+
+.testimonial-slider .testimonial.active {
+  display: block;
+}
+
+/* ======================================================
+   CONTROLES SLIDER (HOME)
+====================================================== */
+
+.testimonial-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.testimonial-btn {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.testimonial-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ======================================================
+   LINK "VER TODAS"
+====================================================== */
+
+.testimonials-link {
+  margin-top: 28px;
+  text-align: center;
+  display: block;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-testimonials .testimonial.featured {
+    padding: 32px;
+  }
+}
+
+/* ======================================================
+   PLATFORM BADGES
+====================================================== */
+
+.platform-badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 10px;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+/* phpBB */
+.platform-phpbb {
+  background: rgba(0, 90, 156, 0.15);
+  color: #5dade2;
+}
+
+/* XenForo */
+.platform-xenforo {
+  background: rgba(222, 86, 25, 0.15);
+  color: #f97316;
+}
+
+/* vBulletin */
+.platform-vbulletin {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.platform-badge {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
 }

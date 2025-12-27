@@ -1,0 +1,16 @@
+<section class="testimonials">
+  <h2>What clients say</h2>
+
+  <div class="testimonial-slider">
+    {% for t in site.data.testimonials %}
+      <div class="testimonial">
+        <p class="testimonial-text">“{{ t.text }}”</p>
+
+        <div class="testimonial-meta">
+          <strong>{{ t.name }}</strong>
+          <span>{{ t.role }} · {{ t.platform }}</span>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

@@ -218,3 +218,33 @@ function timeAgo(date) {
   }
   return "just now";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const testimonials = document.querySelectorAll(".testimonial");
+  const nextBtn = document.getElementById("next-testimonial");
+  const prevBtn = document.getElementById("prev-testimonial");
+
+  if (!testimonials.length || !nextBtn || !prevBtn) {
+    return; // Slider no existe en esta página
+  }
+
+  let index = 0;
+
+  function showTestimonial(i) {
+    testimonials.forEach((t, idx) => {
+      t.classList.toggle("active", idx === i);
+    });
+  }
+
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % testimonials.length;
+    showTestimonial(index);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(index);
+  });
+
+  showTestimonial(0);
+});
