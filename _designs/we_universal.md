@@ -9,6 +9,7 @@ tags: [dark, responsive, phpbb-style]
 repo: nextgen-solutions-gt/we_universal
 schema: design
 hero: design
+demo_style: we_universal
 ---
 
 ## Description

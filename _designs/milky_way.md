@@ -9,6 +9,7 @@ tags: [responsive, phpbb-style]
 repo: nextgen-solutions-gt/milky_way
 schema: design
 hero: design
+demo_style: milky_way
 ---
 
 ## Description

@@ -9,6 +9,7 @@ tags: [responsive, phpbb-style]
 repo: nextgen-solutions-gt/proglass
 schema: design
 hero: design
+demo_style: proglass
 ---
 
 ## Description

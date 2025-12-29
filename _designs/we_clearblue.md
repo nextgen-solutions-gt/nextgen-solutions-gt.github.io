@@ -9,6 +9,7 @@ tags: [responsive, phpbb-style]
 repo: nextgen-solutions-gt/we_clearblue
 schema: design
 hero: design
+demo_style: we_clearblue
 ---
 
 ## Description

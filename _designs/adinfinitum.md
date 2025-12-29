@@ -9,6 +9,7 @@ tags: [dark, responsive, phpbb-style]
 repo: nextgen-solutions-gt/adinfinitum
 schema: design
 hero: design
+demo_style: adinfinitum
 ---
 
 ## Description

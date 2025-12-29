@@ -9,6 +9,7 @@ tags: [responsive, phpbb-style]
 repo: nextgen-solutions-gt/revolution
 schema: design
 hero: design
+demo_style: revolution
 ---
 
 ## Description

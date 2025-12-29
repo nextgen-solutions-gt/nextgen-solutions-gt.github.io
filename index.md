@@ -54,33 +54,53 @@ hero: home
     </button>
   {% endfor %}
 </div>
-  <h2 class="section-title">phpBB Designs</h2>
 
-  <div class="design-grid">
-    {% for design in site.designs %}
-      <article class="design-card reveal" data-tags="{% for tag in design.tags %}{{ tag | slugify }} {% endfor %}">
-	<div class="design-image">
-		<img src="{{ design.image }}" alt="Preview {{ design.title }}">
-	</div>
+<h2 class="section-title">phpBB Designs</h2>
 
-        <h3>{{ design.title }}</h3>
-<div class="design-tags">
-  {% for tag in design.tags %}
-    <span class="tag tag-{{ tag | slugify }}" aria-label="Tag {{ tag }}">
-      {{ tag }}
-    </span>
-  {% endfor %}
-</div>
-		
-        <p>{{ design.description }}</p>
+<div class="design-grid">
+  {% for design in site.designs %}
+    <article
+      class="design-card reveal"
+      data-tags="{% for tag in design.tags %}{{ tag | slugify }} {% endfor %}"
+    >
+      <div class="design-image">
+        <img src="{{ design.image }}" alt="Preview {{ design.title }}">
+      </div>
 
-        <a href="{{ design.url }}" class="btn">
+      <h3>{{ design.title }}</h3>
+
+      <div class="design-tags">
+        {% for tag in design.tags %}
+          <span class="tag tag-{{ tag | slugify }}" aria-label="Tag {{ tag }}">
+            {{ tag }}
+          </span>
+        {% endfor %}
+      </div>
+
+      <p>{{ design.description }}</p>
+
+      <!-- ACCIONES (SIN DUPLICADOS) -->
+      <div class="design-actions">
+        {% if design.demo_style %}
+          <a
+            href="https://demo.nextgen.gt/demo/#{{ design.demo_style }}"
+            class="btn primary"
+            target="_blank"
+            rel="noopener"
+          >
+            Live Demo
+          </a>
+        {% endif %}
+
+        <a href="{{ design.url }}" class="btn outline">
           View details
         </a>
-      </article>
-    {% endfor %}
-  </div>
+      </div>
+    </article>
+  {% endfor %}
+</div>
 </section>
+
 
 <section id="portfolio" class="portfolio container">
   <div class="section-head">

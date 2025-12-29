@@ -9,6 +9,7 @@ tags: [responsive, phpbb-style]
 repo: nextgen-solutions-gt/FI-Subice
 schema: design
 hero: design
+demo_style: fi_subice
 ---
 
 ## Description
