@@ -248,3 +248,85 @@ document.addEventListener("DOMContentLoaded", () => {
 
   showTestimonial(0);
 });
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const el = document.querySelector('.design-milestones');
+  if (!el) return;
+
+  const repo = el.dataset.repo;
+  const milestoneTitle = el.dataset.milestone;
+
+  try {
+    // 1️⃣ Milestones (todos)
+    const res = await fetch(
+      `https://api.github.com/repos/${repo}/milestones?state=all`
+    );
+    if (!res.ok) return;
+
+    const milestones = await res.json();
+    const milestone = milestones.find(
+      m => m.title.trim() === milestoneTitle.trim()
+    );
+    if (!milestone) return;
+
+    // 2️⃣ Progreso
+    const total = milestone.open_issues + milestone.closed_issues;
+    const percent = total
+      ? Math.round((milestone.closed_issues / total) * 100)
+      : 0;
+
+    const fill = el.querySelector('.progress-fill');
+    if (fill) fill.style.width = percent + '%';
+
+    const label = el.querySelector('.milestone-percent');
+    if (label) label.textContent = percent + '%';
+
+    if (percent === 100) {
+      el.dataset.status = 'completed';
+    }
+
+    // 3️⃣ Issues del milestone
+    const issuesRes = await fetch(
+      `https://api.github.com/repos/${repo}/issues?milestone=${milestone.number}&state=all`
+    );
+    if (!issuesRes.ok) return;
+
+    let issues = await issuesRes.json();
+
+    // ❗ Excluir Pull Requests
+    issues = issues.filter(issue => !issue.pull_request);
+
+    const list = el.querySelector('.milestone-list');
+    if (list) list.innerHTML = '';
+
+    // 4️⃣ Última actualización
+    const closedIssues = issues
+      .filter(i => i.state === 'closed' && i.closed_at)
+      .sort((a, b) => new Date(b.closed_at) - new Date(a.closed_at));
+
+    if (closedIssues.length) {
+      const updatedEl = el.querySelector('.milestone-updated');
+      if (updatedEl) {
+        const date = new Date(closedIssues[0].closed_at);
+        updatedEl.querySelector('span').textContent =
+          date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          });
+        updatedEl.hidden = false;
+      }
+    }
+
+    // 5️⃣ Render lista
+    issues.forEach(issue => {
+      const li = document.createElement('li');
+      li.className = issue.state === 'closed' ? 'done' : '';
+      li.textContent = issue.title;
+      list?.appendChild(li);
+    });
+
+  } catch (err) {
+    console.error('Error cargando milestones:', err);
+  }
+});
