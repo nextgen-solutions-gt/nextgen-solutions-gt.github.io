@@ -1,0 +1,89 @@
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+   
+<!-- Floating button -->
+<button class="support-fab" aria-label="Open support">
+  <i class="fa-solid fa-comments"></i>
+  <span>Need help?</span>
+</button>
+
+<!-- Drawer -->
+<aside class="support-drawer" aria-hidden="true">
+  <header class="support-header">
+    <div class="support-title">
+      <span class="support-icon">
+        <i class="fa-solid fa-comments"></i>
+      </span>
+      <div>
+        <strong>Support</strong>
+        <small>How can I help you?</small>
+      </div>
+    </div>
+
+    <button class="support-close" aria-label="Close support">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </header>
+
+  <div class="support-body">
+    <!-- Assistant message -->
+    <div class="support-message bot">
+      <p>Hi 👋 I’m the support assistant. What do you need help with today?</p>
+    </div>
+
+    <!-- Initial options -->
+    <div class="support-options">
+      <button class="support-option">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        I have a technical issue
+      </button>
+
+      <button class="support-option">
+        <i class="fa-solid fa-palette"></i>
+        Questions about styles / themes
+      </button>
+
+      <button class="support-option">
+        <i class="fa-solid fa-bug"></i>
+        I want to report a bug
+      </button>
+
+      <button class="support-option">
+        <i class="fa-solid fa-briefcase"></i>
+        Work / collaboration
+      </button>
+
+      <button class="support-option secondary">
+        <i class="fa-solid fa-circle-question"></i>
+        Something else
+      </button>
+    </div>
+<form
+  class="support-form"
+  action="https://formspree.io/f/xnjjavzn"
+  method="POST"
+  hidden
+>
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" name="name" required />
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" name="email" required />
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" required></textarea>
+  </div>
+  <div class="h-captcha" data-sitekey="6030d4a2-f7fa-49f6-a72e-4ab4eba091be"></div>
+  <button type="submit" class="support-submit">
+    <i class="fa-solid fa-paper-plane"></i> Send message
+  </button>
+</form>
+
+  </div>
+</aside>
+
+<!-- Backdrop -->
+<div class="support-backdrop" aria-hidden="true"></div>
