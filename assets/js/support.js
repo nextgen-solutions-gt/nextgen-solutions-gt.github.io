@@ -183,9 +183,6 @@ function showContactForm() {
 
   scrollToBottom();
 }
-
-
-
   function hideContactForm() {
     if (form) form.hidden = true;
   }
@@ -513,6 +510,15 @@ form.addEventListener("submit", function (e) {
       );
     });
 });
+
+document.addEventListener("click", e => {
+  const btn = e.target.closest("[data-open-support]");
+  if (!btn) return;
+
+  openSupport();
+  contact();
+});
+
 
   /* =====================
      INIT

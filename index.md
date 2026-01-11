@@ -185,10 +185,8 @@ hero: home
   </div>
 </section>
 
-
-
 <section id="contact" class="contact container">
-  <h2 class="section-title">Contact Me</h2>
+  <h2 class="section-title">Contact me</h2>
 
   <p class="contact-text">
     Interested in working together or need help with phpBB?
@@ -199,28 +197,32 @@ hero: home
     Request custom work
   </a>
 </div>
+<p class="social-note">
+  You can also find me on:
+</p>
 
-  <div class="contact-socials reveal">
-    <a href="https://github.com/yourusername" target="_blank" class="social github">
-      <i class="fa-brands fa-github"></i>
-      GitHub
-    </a>
+<div class="contact-socials reveal">
+  <a
+    href="https://github.com/nextgen-solutions-gt"
+    target="_blank"
+    class="social github"
+    aria-label="GitHub"
+  >
+    <i class="fa-brands fa-github"></i>
+    GitHub
+  </a>
 
-    <a href="https://discord.com/users/YOUR_ID" target="_blank" class="social discord">
-      <i class="fa-brands fa-discord"></i>
-      Discord
-    </a>
+<a
+  href="https://www.phpbb.com/community/memberlist.php?mode=viewprofile&u=1292660"
+  target="_blank"
+  class="social phpbb"
+>
+  <i class="fa-solid fa-comments"></i>
+  phpBB
+</a>
 
-    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social linkedin">
-      <i class="fa-brands fa-linkedin"></i>
-      LinkedIn
-    </a>
+</div>
 
-    <a href="mailto:contact@yourdomain.com" class="social email">
-      <i class="fa-solid fa-envelope"></i>
-      Email
-    </a>
-  </div>
 </section>
 
 
