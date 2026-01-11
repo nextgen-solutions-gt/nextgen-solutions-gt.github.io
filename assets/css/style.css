@@ -451,17 +451,16 @@ body.menu-open {
   align-items: center;
   gap: 0.4rem;
 
-  padding: 0.25rem 0.7rem;
+  padding: 0.35rem 0.7rem;
   border-radius: 999px;
 
   background: rgba(37, 99, 235, 0.12);
   color: var(--primary);
 
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 500;
   letter-spacing: 0.02em;
-
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.3rem;
 }
 
 [data-theme="dark"] .hero-badge {
@@ -1377,21 +1376,6 @@ body.menu-open {
 
 .hero-testimonials .hero-subtitle {
   color: var(--muted);
-}
-
-/* ======================================================
-   HERO BADGE
-====================================================== */
-
-.hero-badge {
-  display: inline-block;
-  margin-bottom: 20px;
-  padding: 6px 14px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  background: rgba(37, 99, 235, 0.1);
-  color: var(--primary);
-  border-radius: 999px;
 }
 
 /* ======================================================
