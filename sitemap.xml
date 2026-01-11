@@ -14,15 +14,13 @@ layout: null
 
   <!-- Static pages -->
   {% for page in site.pages %}
-    {% if page.url != "/" and page.url contains "." == false %}
-      {% unless page.exclude_from_sitemap %}
+    {% unless page.url == "/" or page.url contains "." or page.exclude_from_sitemap %}
       <url>
         <loc>{{ site.url }}{{ page.url }}</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
       </url>
-      {% endunless %}
-    {% endif %}
+    {% endunless %}
   {% endfor %}
 
   <!-- Designs collection -->
