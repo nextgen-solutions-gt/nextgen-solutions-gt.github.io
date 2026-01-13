@@ -10,26 +10,26 @@ hero: home
 <section id="services" class="services container">
 <div class="card reveal">
   <i class="fa-solid fa-download"></i>
-  <h3>phpBB Installation</h3>
-  <p>Professional installation and initial configuration.</p>
+  <h3>Installation</h3>
+  <p>Clean, secure installation for phpBB, XenForo or vBulletin with best-practice configuration.</p>
 </div>
 
 <div class="card reveal">
   <i class="fa-solid fa-arrows-rotate"></i>
-  <h3>phpBB Update</h3>
-  <p>We update your forum safely without data loss.</p>
+  <h3>Update</h3>
+  <p>Safe upgrades and migrations across phpBB, XenForo and vBulletin — no data loss.</p>
 </div>
 
 <div class="card reveal">
   <i class="fa-solid fa-screwdriver-wrench"></i>
   <h3>Maintenance</h3>
-  <p>Security, performance and continuous support.</p>
+  <p>Ongoing security, performance tuning and expert support for major forum platforms.</p>
 </div>
 
 <div class="card reveal">
   <i class="fa-solid fa-palette"></i>
-  <h3>phpBB Designs</h3>
-  <p>Modern, responsive and custom phpBB styles.</p>
+  <h3>Designs</h3>
+  <p>Custom styles for phpBB, XenForo and vBulletin — responsive, clean and user-focused.</p>
 </div>
 </section>
 
@@ -100,7 +100,6 @@ hero: home
   {% endfor %}
 </div>
 </section>
-
 
 <section id="portfolio" class="portfolio container">
   <div class="section-head">
@@ -193,7 +192,7 @@ hero: home
     You can reach me through any of the following platforms.
   </p>
 <div class="contact-cta reveal">
-  <a href="/custom-work/" class="btn primary large">
+  <a class="btn primary large" data-open-support>
     Request custom work
   </a>
 </div>

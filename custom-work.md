@@ -10,21 +10,20 @@ schema: service
 <section class="custom-hero">
   <div class="container">
 
-    <span class="hero-badge">Custom Work</span>
+    <span class="hero-badge">Custom Forum Services</span>
 
     <h1>
-      Tailored <span class="highlight">phpBB solutions</span>
-      for your community
+      Tailored <span class="highlight">forum solutions</span> for phpBB, XenForo and vBulletin
     </h1>
 
     <p class="hero-text">
-      Need something unique? I provide custom development, design, and optimization
-      services built specifically around your forum’s needs.
+      Every forum is different. I provide custom development, performance optimization
+	  and design work based on real needs — not one-size-fits-all solutions.
     </p>
 
     <div class="hero-actions">
       <a href="#services" class="btn primary">View services</a>
-      <a href="#contact" class="btn secondary">Contact me</a>
+      <a href="#contact" class="btn secondary">Discuss your project</a>
     </div>
 
   </div>
@@ -35,7 +34,8 @@ schema: service
     <i class="fa-solid fa-palette"></i>
     <h3>Custom Styles</h3>
     <p>
-      Unique phpBB styles designed from scratch or based on your brand identity.
+      Custom styles for phpBB, XenForo and vBulletin — designed to match your brand
+	  and improve usability across all devices.
     </p>
   </div>
 
@@ -43,7 +43,8 @@ schema: service
     <i class="fa-solid fa-gauge-high"></i>
     <h3>Performance Optimization</h3>
     <p>
-      Faster load times, optimized queries and improved forum performance.
+	  Database tuning, caching strategies and performance improvements
+	  tailored to your forum platform.
     </p>
   </div>
 
@@ -51,7 +52,7 @@ schema: service
     <i class="fa-solid fa-shield-halved"></i>
     <h3>Security Hardening</h3>
     <p>
-      Secure configurations, updates and best practices to protect your community.
+      Secure configurations, updates and best practices for phpBB, XenForo and vBulletin.
     </p>
   </div>
 
@@ -66,7 +67,7 @@ schema: service
       <i class="fa-solid fa-comments"></i>
       <h3>1. Discussion</h3>
       <p>
-        We analyze your needs, goals and technical requirements.
+        We review your forum platform, goals and technical requirements.
       </p>
     </div>
 
@@ -74,7 +75,7 @@ schema: service
       <i class="fa-solid fa-pen-ruler"></i>
       <h3>2. Proposal</h3>
       <p>
-        You receive a clear proposal with scope, timeline and cost.
+        You receive a clear proposal adapted to your forum software and community size.
       </p>
     </div>
 
@@ -82,7 +83,7 @@ schema: service
       <i class="fa-solid fa-rocket"></i>
       <h3>3. Delivery</h3>
       <p>
-        Implementation, testing and final delivery of your custom solution.
+        Careful implementation, testing and delivery — regardless of platform.
       </p>
     </div>
 
@@ -91,15 +92,14 @@ schema: service
 </section>
 <section id="contact" class="contact container">
 
-  <h2 class="section-title">Let’s build something custom</h2>
+  <h2 class="section-title">Running phpBB, XenForo or vBulletin?</h2>
 
   <p class="contact-text">
-    Have a project in mind? Tell me about your phpBB forum and let’s discuss how
-    we can make it better.
+    Tell me about your forum and I’ll suggest the best technical approach.
   </p>
 
-  <a href="/contact/" class="btn primary">
-    Contact me for custom work
+  <a class="btn primary" data-open-support>
+    Start a conversation
   </a>
 
 </section>

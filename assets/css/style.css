@@ -2101,3 +2101,10 @@ body.menu-open {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0,0,0,.15);
 }
+
+.highlight {
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--primary), #33b5fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
