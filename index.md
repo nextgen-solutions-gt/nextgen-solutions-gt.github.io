@@ -54,8 +54,12 @@ hero: home
     </button>
   {% endfor %}
 </div>
-
-<h2 class="section-title">phpBB Designs</h2>
+<div class="section-head">
+	<h2 class="section-title">phpBB Designs</h2>
+    <p class="section-subtitle">
+      We have a wide variety of designs.
+    </p>
+</div>
 
 <div class="design-grid">
   {% for design in site.designs %}
