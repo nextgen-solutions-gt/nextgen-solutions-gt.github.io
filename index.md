@@ -105,6 +105,38 @@ hero: home
 </div>
 </section>
 
+<section id="extensions" class="extensions container">
+
+  <div class="section-head">
+    <h2 class="section-title">Extensions</h2>
+    <p class="section-subtitle">
+      Custom and maintained extensions for phpBB
+    </p>
+  </div>
+
+  <div class="design-grid">
+    {% for ext in site.extensions %}
+      <article class="design-card reveal">
+
+        <div class="design-image">
+          <img src="{{ ext.image }}" alt="{{ ext.title }}">
+        </div>
+
+        <h3>{{ ext.title }}</h3>
+        <p>{{ ext.description }}</p>
+
+        <div class="design-actions">
+          <a href="{{ ext.url }}" class="btn primary">
+            View extension
+          </a>
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+
+</section>
+
 <section id="portfolio" class="portfolio container">
   <div class="section-head">
     <h2 class="section-title">Portfolio</h2>

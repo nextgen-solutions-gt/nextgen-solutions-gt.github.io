@@ -1,0 +1,131 @@
+---
+layout: default
+---
+
+<article class="extension container">
+
+  {% include breadcrumbs.html %}
+
+  <header class="extension-header">
+    <h1>{{ page.title }}</h1>
+
+    {% if page.description %}
+      <p class="extension-lead">{{ page.description }}</p>
+    {% endif %}
+
+    {% if page.image %}
+      <div class="extension-cover">
+        <img src="{{ page.image }}" alt="{{ page.title }}">
+      </div>
+    {% endif %}
+
+    {% if page.repo or page.download %}
+    <div class="extension-actions">
+
+      {% if page.repo %}
+      <a
+        href="{{ page.repo }}"
+        class="btn outline"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-github"></i>
+        Repository
+      </a>
+      {% endif %}
+
+      {% if page.download %}
+      <a
+        href="{{ page.download }}"
+        class="btn primary"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-solid fa-download"></i>
+        Download
+      </a>
+      {% endif %}
+
+    </div>
+    {% endif %}
+  </header>
+
+  {% if page.platform or page.version or page.status %}
+  <section class="extension-meta">
+    <ul class="badges">
+      {% if page.platform %}
+        <li>{{ page.platform }}</li>
+      {% endif %}
+      {% if page.version %}
+        <li>Version {{ page.version }}</li>
+      {% endif %}
+      {% if page.status %}
+        <li class="badge-status badge-{{ page.status | slugify }}">
+          {{ page.status }}
+        </li>
+      {% endif %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <section class="extension-content">
+    {{ content }}
+  </section>
+
+  {% if page.repo %}
+  <!-- Commits -->
+  <section class="recent-commits" data-repo="{{ page.repo }}">
+    <h3>Commit history</h3>
+    <ul class="commit-list"></ul>
+  </section>
+
+  <!-- Milestones -->
+  <section
+    class="extension-milestones"
+    data-repo="{{ page.repo }}"
+    data-milestone="{{ page.milestone | default: 'main' }}"
+  >
+    <div class="milestone-head">
+      <h3>Project progress</h3>
+      <span class="milestone-percent">0%</span>
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+
+    <p class="milestone-updated" hidden>
+      Last updated: <span></span>
+    </p>
+
+    <ul class="milestone-list"></ul>
+  </section>
+  {% endif %}
+
+  <!-- Comments -->
+  <section class="comments container">
+    <p class="comments-hint">
+      Comments are powered by GitHub Discussions.
+      You need a GitHub account to participate.
+    </p>
+
+    <h3>Comments</h3>
+
+    <script src="https://giscus.app/client.js"
+            data-repo="nextgen-solutions-gt/site-comments"
+            data-repo-id="R_kgDOQul2Fg"
+            data-category="General"
+            data-category-id="DIC_kwDOQul2Fs4C0OPZ"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="preferred_color_scheme"
+            data-lang="es"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </section>
+
+</article>

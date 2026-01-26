@@ -3,6 +3,11 @@ collections:
     output: true
     permalink: /designs/:name/
 
+  extensions:
+    output: true
+    permalink: /extensions/:name/
+
+
 # Site identity
 title: nextgen solutions
 description: Professional phpBB services, custom development and premium designs.
